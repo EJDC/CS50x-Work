@@ -18,19 +18,22 @@ int main(void)
     // does this for appropriate number rows based on height
     for (int row = 0; row < height; row++)
     {
+           //prints appropriate number of bricks on row
          for (int bricks = 0; bricks < height; bricks++)
             {
                 printf("#");
+
+                for (int spaces = 0; spaces < height ; spaces++)
+                {
+                    printf(" ");
+                }
             }
 
-            
-        //prints appropriate number of spaces on row
-        // for (int spaces = 0; spaces < height ; spaces++)
-        //     {
-        //         printf(" ");
-        //     }
 
-            //prints appropriate number of bricks on row
+        // prints appropriate number of spaces on row
+
+
+
 
 
             //prints gap
