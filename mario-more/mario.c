@@ -14,14 +14,16 @@ int main(void)
     while (height > 8 || height < 1);
 
     int bricks = height;
+    int spaces = 0;
 
     // does this for appropriate number rows based on height
     for (int row = 0; row < height; row++)
     {
         //prints appropriate number of spaces on row
-        for (int spaces = 0; spaces < height ; spaces++)
+        for (spaces < height;)
             {
                 printf(" ");
+                spaces++;
             }
 
             //prints appropriate number of bricks on row
