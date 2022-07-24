@@ -19,7 +19,7 @@ int main(void)
         //prints appropriate number of spaces on row
         for (int spaces = 0; spaces < height; spaces++)
             {
-                printf(" ");
+                if spacesprintf(" ");
             }
 
             //prints appropriate number of bricks on row
