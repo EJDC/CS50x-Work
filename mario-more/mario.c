@@ -13,18 +13,26 @@ int main(void)
     }
     while (height > 8 || height < 1);
 
-    int maxheight = 8
-    int spaces =
+
+    //main loop - number of rows based on height
+
+    for (int row = 0; row < height; row++)
+        //for each row, add a number of spaces = height-1
+        {
+            printf()
+                    }
+
+        //for each row, add a number of bricks = height
+        //for each row, add a gap of two spaces
+        //for each row, add a number of bricks = height
+        //for each row, add a new line.
 
 
-    //row generator with counter - if counter is 1 then space
-
-    //
 
 
 
     // does this for appropriate number rows based on height
-    for (int row = 0; row < height; row++)
+
     {
         //prints appropriate number of spaces on row
         for (int spaces = 0; spaces < height ; spaces++)
