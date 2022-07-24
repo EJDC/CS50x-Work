@@ -22,9 +22,9 @@ int maxHeight = 8;
 
         //for each row, add a number of spaces = height-1
 
-            for (int spaces = (height -1); spaces < height; spaces++)
+            for (int spaces = 0; spaces < height; spaces++)
             {
-            if (spaces > 1)
+            if (spaces < maxHeight)
                 {
                     printf(" ");
                 }
