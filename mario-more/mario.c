@@ -13,5 +13,8 @@ int main(void)
     }
     while (height < 8)
 
+// creates rows based on height
+
+//
 
 }
