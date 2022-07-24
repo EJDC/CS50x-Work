@@ -21,6 +21,7 @@ int main(void)
            //prints appropriate number of bricks on row
          while (bricks < height)
             {
+                for()
                 bricks++;
                 printf("#");
 
