@@ -13,7 +13,7 @@ int main(void)
     }
     while (height > 8 || height < 1);
 
-    int bricks = height;
+    int bricks = 0;
 
     // does this for appropriate number rows based on height
     for (int row = 0; row < height; row++)
@@ -24,10 +24,10 @@ int main(void)
                 bricks++;
                 printf("#");
 
-                for (int spaces = 0; spaces < height ; spaces++)
-                {
-                    printf(" ");
-                }
+                // for (int spaces = 0; spaces < height ; spaces++)
+                // {
+                //     printf(" ");
+                // }
             }
 
 
