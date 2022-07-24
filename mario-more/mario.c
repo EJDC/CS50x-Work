@@ -17,11 +17,14 @@ int main(void)
     //main loop - number of rows based on height
 
     for (int row = 0; row < height; row++)
-        //for each row, add a number of spaces = height-1
         {
+
+        //for each row, add a number of spaces = height-1
+
             for (int spaces = (height - 1); spaces ++)
-            printf(" ")
-                    }
+            {
+            printf(" ");
+            }
 
         //for each row, add a number of bricks = height
         //for each row, add a gap of two spaces
