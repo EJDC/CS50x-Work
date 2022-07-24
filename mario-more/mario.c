@@ -28,6 +28,10 @@ int main(void)
                 printf("#");
             }
 
+            //creates new line
+printf("\n");
+
+
     }
 
 
