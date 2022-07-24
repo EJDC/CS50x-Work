@@ -23,7 +23,7 @@ int main(void)
             }
 
             //prints appropriate number of bricks on row
-            for (int bricks = 0; (bricks = height); bricks++)
+            for (int bricks = 0; bricks < height; bricks++)
             {
                 printf("#");
             }
