@@ -13,9 +13,9 @@ int main(void)
     }
     while (height > 8 || height < 1);
 
-    int maxHeight = 8
+    int maxHeight = 8;
     int bricks = height;
-    int spaces = 8 - height;
+    int spaces = maxHeight - height;
 
     // does this for appropriate number rows based on height
     for (int row = 0; row < height; row++)
