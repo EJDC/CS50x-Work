@@ -14,8 +14,11 @@ int main(void)
     while (height > 8 || height < 1);
 
     // creates rows based on height
-    for (int i = 0; i < height; i++)
+    for (int row = 0; row < height; i++)
     {
+        for (int lspaces = 0; lspaces = 8 - height)
+        printf(" ")
+        
         // creates columns based on height
         for (int j = 0; j < height; j++)
         {
