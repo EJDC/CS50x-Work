@@ -9,12 +9,12 @@ int main(void)
     //do while loop which continually prompts user for height which is an integer less than 8.
     do
     {
-        height = get_height("Height:")
+        height = get_int("Height:");
     }
-    while (height < 8)
+    while (height < 8);
 
     // creates rows based on height
-    for (int i = 0, i < height, i++)
+    for (int i = 0; i < height; i++);
     // creates columns based on height
 
 
