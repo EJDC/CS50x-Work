@@ -14,7 +14,7 @@ int main(void)
     while (height < 8)
 
     // creates rows based on height
-    
+    for (int i = 0, i < height, i++)
     // creates columns based on height
 
 
