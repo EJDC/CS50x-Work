@@ -14,7 +14,14 @@ int main(void)
     while (height > 8 || height < 1);
 
     int maxheight = 8
-    int spaces
+    int spaces =
+
+
+    //row generator with counter - if counter is 1 then space
+
+    //
+
+
 
     // does this for appropriate number rows based on height
     for (int row = 0; row < height; row++)
