@@ -22,6 +22,9 @@ int main(void)
             //print brick
             printf("#")
         }
+
+        //next row
+        printf("\n")
     }
 
 
