@@ -25,9 +25,9 @@ int maxHeight = 8;
             for (int spaces = (height -1); spaces < height; spaces++)
             {
             if (spaces > 1)
-            {
-                printf(" ");
-            }
+                {
+                    printf(" ");
+                }
             }
 
         //for each row, add a number of bricks = height
