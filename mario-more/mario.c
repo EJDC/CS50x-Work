@@ -14,7 +14,7 @@ int main(void)
     while (height > 8 || height < 1);
 
     // does this for appropriate number rows based on height
-    for (int row = 0; row < height; row--)
+    for (int row = 0; row < height; row++)
     {
         //prints appropriate number of spaces on row
         for (int spaces = 0; spaces < height ; spaces++)
