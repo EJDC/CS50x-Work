@@ -17,7 +17,7 @@ int main(void)
     for (int row = 0; row < height; row++)
     {
         //prints appropriate number of spaces on row
-        for (int spaces = 0; (spaces = height - 1); spaces++)
+        for (int spaces = 0; spaces < height; spaces++)
             {
                 printf(" ");
             }
