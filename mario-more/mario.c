@@ -28,9 +28,17 @@ int main(void)
                 printf("#");
             }
 
-            //creates new line
-printf("\n");
+            //prints gap
+                printf("  ");
 
+            //prints appropriate number of bricks on row
+            for (int bricks = 0; bricks < height; bricks++)
+            {
+                printf("#");
+            }
+
+            //creates new line
+            printf("\n");
 
     }
 
