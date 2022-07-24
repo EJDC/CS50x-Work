@@ -21,50 +21,32 @@ int main(void)
 
         //for each row, add a number of spaces = height-1
 
-            for (int spaces = (height - 1); spaces ++)
+            for (int spaces = (height - 1); spaces < height; spaces ++)
             {
             printf(" ");
             }
 
         //for each row, add a number of bricks = height
-        //for each row, add a gap of two spaces
-        //for each row, add a number of bricks = height
-        //for each row, add a new line.
 
-
-
-
-
-    // does this for appropriate number rows based on height
-
-    {
-        //prints appropriate number of spaces on row
-        for (int spaces = 0; spaces < height ; spaces++)
-            {
-                printf(" ");
-            }
-
-            //prints appropriate number of bricks on row
             for (int bricks = 0; bricks < height; bricks++)
             {
                 printf("#");
             }
 
-            //prints gap
+        //for each row, add a gap of two spaces
+
                 printf("  ");
 
-            //prints appropriate number of bricks on row
-            for (int bricks = 0; bricks < height; bricks++)
+        //for each row, add a number of bricks = height
+
+             for (int bricks = 0; bricks < height; bricks++)
             {
                 printf("#");
             }
 
-            //creates new line
+        //for each row, add a new line.
+
             printf("\n");
 
-    }
-
-
-
-
+         }
 }
