@@ -23,7 +23,10 @@ int main(void)
 
             for (int spaces = (height -1); spaces < height; spaces++)
             {
-            printf(" ");
+            if (spaces > 1)
+            {
+                printf(" ");
+            }
             }
 
         //for each row, add a number of bricks = height
