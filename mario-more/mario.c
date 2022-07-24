@@ -32,10 +32,10 @@ int main(void)
                 printf("  ");
 
             //prints appropriate number of bricks on row
-            for (int bricks = 0; bricks < height; bricks++)
-            {
-                printf("#");
-            }
+            // for (int bricks = 0; bricks < height; bricks++)
+            // {
+            //     printf("#");
+            // }
 
             //creates new line
             printf("\n");
