@@ -19,7 +19,8 @@ int main(void)
     for (int row = 0; row < height; row++)
         //for each row, add a number of spaces = height-1
         {
-            printf()
+            for (int spaces = (height - 1); spaces ++)
+            printf(" ")
                     }
 
         //for each row, add a number of bricks = height
