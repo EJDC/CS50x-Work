@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    //defines integer of height
+    //user input height
     int height;
 
     //do while loop which continually prompts user for height which is an integer less than 8.
@@ -13,14 +13,15 @@ int main(void)
     }
     while (height > 8 || height < 1);
 
-    // int bricks = height;
+    int bricks = height;
 
     // does this for appropriate number rows based on height
     for (int row = 0; row < height; row++)
     {
            //prints appropriate number of bricks on row
-         for (int bricks = 0; bricks < height; bricks++)
+         while (bricks < height)
             {
+                bricks++;
                 printf("#");
 
                 for (int spaces = 0; spaces < height ; spaces++)
