@@ -16,10 +16,16 @@ int main(void)
     // creates rows based on height
     for (int row = 0; row < height; row++)
     {
-        for (int lspaces = 0; (lspaces = 8 - height);)
+        //create appropriate number of spaces on row
+        for (int spaces = 0; (spaces = 8 - height);)
             {
             printf(" ");
             }
+
+            //create appropriate number of bricks on row
+
+            for (int bricks = 0; (bricks < height;)
+
         // creates columns based on height
         for (int j = 0; j < height; j++)
         {
