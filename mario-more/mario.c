@@ -17,13 +17,13 @@ int main(void)
     for (int row = 0; row < height; row++)
     {
         //prints appropriate number of spaces on row
-        for (int spaces = 0; (spaces = 8 - height);)
+        for (int spaces = 0; (spaces = 8 - height); spaces++)
             {
                 printf(" ");
             }
 
             //prints appropriate number of bricks on row
-            for (int bricks = 0; (bricks = height);)
+            for (int bricks = 0; (bricks = height); bricks++)
             {
                 printf("#");
             }
