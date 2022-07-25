@@ -19,10 +19,14 @@ int main(void)
     for (int i = 0; i < height; i++)
         {
 
-          // nested loop - prints
+          // nested loop - prints blocks
+
            for (int j = -1; (j < i); j++)
             {
-             for (int k = (8 - i); (k < i); k--)
+
+              // nested loop - prints spaces
+
+             for (int k = 4; (k > i); k--)
                {
                  printf(".");
                }
