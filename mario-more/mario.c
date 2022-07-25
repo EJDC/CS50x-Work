@@ -18,41 +18,16 @@ int main(void)
 
     for (int i = 0; i < height; i++)
         {
+
+          // nested loop - prints
            for (int j = -1; (j < i); j++)
             {
-             for (int k = (8 + i); (k > i); k--)
+             for (int k = (8 - i); (k < i); k--)
                {
                  printf(".");
                }
                  printf("#");
             }
-
-        //for each row, add a number of spaces = height-1
-
-          //  for (int j = spaces; (j <= spaces && j > 0); j--)
-      //      {
-
-                //    printf(".");
-          //
-
-
-        //for each row, add a number of bricks = height
-
-        //    for (int bricks = 0; bricks < height; bricks++)
-        //    {
-          //      printf("#");
-        //    }
-
-        //for each row, add a gap of two spaces
-
-        //        printf("  ");
-
-        //for each row, add a number of bricks = height
-
-      //       for (int bricks = 0; bricks < height; bricks++)
-        //    {
-          //      printf("#");
-          //  }
 
         //for each row, add a new line.
 
