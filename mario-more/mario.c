@@ -26,11 +26,11 @@ int main(void)
 
               // nested loop - prints spaces
 
-             for (int k = 4; (k > i); k--)
+             for (int k = -1; (k < j); k++)
                {
                  printf(".");
                }
-               
+
                  printf("#");
             }
 
