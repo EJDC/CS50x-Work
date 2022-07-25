@@ -13,9 +13,6 @@ int main(void)
     }
     while (height < 8 && height >= 1);
 
-int maxHeight = 8;
-int spaces = height -1;
-
     //main loop - number of rows based on height
 
     for (int i = 0; i < height; i++)
