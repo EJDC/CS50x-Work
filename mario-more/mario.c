@@ -15,11 +15,9 @@ int main(void)
 
     //main loop - number of rows based on height
 
-    int maxHeight = 8;
-
     for (int i = 0; i < height; i++)
         {
-            for (int j = 0; (i <= j); j++)
+            for (int j = (height - 1); (i <= j && j > 0); j--)
             {
                 printf(".");
             }
