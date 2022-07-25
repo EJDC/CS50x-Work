@@ -50,7 +50,7 @@ int spaces = height -1;
 
         //for each row, add a new line.
 
-            // printf("\n");
+             printf("\n");
 
          }
 }
