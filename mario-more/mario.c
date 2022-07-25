@@ -6,7 +6,8 @@ int main(void)
     //defines integer of height
     int height;
 
-    //do while loop which continually prompts user for height which is an integer less than 8.
+    //loop which continually asks for height, if the user enters a height which is less than 1, or greater than 8
+
     do
     {
         height = get_int("Height:");
