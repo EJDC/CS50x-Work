@@ -5,6 +5,7 @@ int main(void)
 {
     //defines integer of height
     int height;
+    int maxheight = 8;
 
     //do while loop which continually prompts user for height which is an integer less than 8.
     do
@@ -16,6 +17,8 @@ int main(void)
     //main loop - number of rows based on height
 
     for (int i = 0; i < height; i++)
+
+    // for each row, print a number of spaces equal to maxheight (8)
         {
             for (int j = (height - i); (i <= j && j > 0); j--)
             {
