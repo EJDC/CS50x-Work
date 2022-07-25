@@ -5,14 +5,13 @@ int main(void)
 {
     //defines integer of height
     int height;
-    int maxheight = 8;
 
     //do while loop which continually prompts user for height which is an integer less than 8.
     do
     {
         height = get_int("Height:");
     }
-    while (height <=8);
+    while (height < 8);
 
     //main loop - number of rows based on height
 
