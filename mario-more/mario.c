@@ -22,7 +22,7 @@ int spaces = height -1;
         {
             for (int j = height; (i <= j && j > 0); j--)
             {
-                printf(".")
+                printf(".");
             }
         //for each row, add a number of spaces = height-1
 
