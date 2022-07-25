@@ -20,15 +20,15 @@ int spaces = height -1;
 
     for (int i = 0; i < height; i++)
         {
+            for
 
         //for each row, add a number of spaces = height-1
 
-            for (int j = height; (j <= height && j > 0); j--)
-            {
+          //  for (int j = spaces; (j <= spaces && j > 0); j--)
+      //      {
 
-                    f
                     printf(".");
-            }
+        //    }
 
 
         //for each row, add a number of bricks = height
