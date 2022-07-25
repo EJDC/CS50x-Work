@@ -11,7 +11,7 @@ int main(void)
     {
         height = get_int("Height:");
     }
-    while (height < 8 && height >= 1);
+    while (height > 0 && height < 8);
 
     //main loop - number of rows based on height
 
