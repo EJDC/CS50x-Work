@@ -20,7 +20,7 @@ int spaces = height -1;
 
     for (int i = 0; i < height; i++)
         {
-            for
+            for int j
 
         //for each row, add a number of spaces = height-1
 
