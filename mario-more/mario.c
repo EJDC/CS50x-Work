@@ -14,6 +14,7 @@ int main(void)
     while (height > 8 || height < 1);
 
 int maxHeight = 8;
+int spaces = height -1;
 
     //main loop - number of rows based on height
 
@@ -22,9 +23,9 @@ int maxHeight = 8;
 
         //for each row, add a number of spaces = height-1
 
-            while (int spaces = 0; spaces < height; spaces++)
+            for (int i = 0; i < height; i++)
             {
-            if (spaces < maxHeight)
+                if ((maxHeight-height) > 0)
                 {
                     printf(" ");
                 }
@@ -32,25 +33,25 @@ int maxHeight = 8;
 
         //for each row, add a number of bricks = height
 
-            for (int bricks = 0; bricks < height; bricks++)
-            {
-                printf("#");
-            }
+        //    for (int bricks = 0; bricks < height; bricks++)
+        //    {
+          //      printf("#");
+        //    }
 
         //for each row, add a gap of two spaces
 
-                printf("  ");
+        //        printf("  ");
 
         //for each row, add a number of bricks = height
 
-             for (int bricks = 0; bricks < height; bricks++)
-            {
-                printf("#");
-            }
+      //       for (int bricks = 0; bricks < height; bricks++)
+        //    {
+          //      printf("#");
+          //  }
 
         //for each row, add a new line.
 
-            printf("\n");
+            // printf("\n");
 
          }
 }
