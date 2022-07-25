@@ -20,9 +20,9 @@ int main(void)
         {
            for (int j = -1; (j < i); j++)
             {
+              for (int k = )
                 printf("#");
             }
-          for (int k = )
 
         //for each row, add a number of spaces = height-1
 
