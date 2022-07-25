@@ -20,10 +20,9 @@ int main(void)
         {
            for (int j = -1; (j < i); j++)
             {
-             for (int k = (8 + j); (k > i); k--)
+             for (int k = (8 + i); (k > i); k--)
                {
                  printf(".");
-                 break;
                }
                  printf("#");
             }
