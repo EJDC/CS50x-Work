@@ -19,7 +19,7 @@ int main(void)
 
     for (int i = 0; i < height; i++)
         {
-            for (int j = (maxHeight - height); (i <= j && j > 0); j--)
+            for (int j = 0; (i <= j); j++)
             {
                 printf(".");
             }
