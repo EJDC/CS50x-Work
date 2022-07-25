@@ -11,16 +11,16 @@ int main(void)
     {
         height = get_int("Height:");
     }
-    while (height >= 1);
+    while (height < 1 || height > 8);
 
     //main loop - number of rows based on height
 
- //   for (int i = 0; i < height; i++)
-   //     {
-   //         for (int j = -1; (j < i); j++)
-   //         {
+    for (int i = 0; i < height; i++)
+        {
+           for (int j = -1; (j < i); j++)
+            {
                 printf("#");
-   //;         }
+            }
 
         //for each row, add a number of spaces = height-1
 
@@ -28,7 +28,7 @@ int main(void)
       //      {
 
                 //    printf(".");
-        //    }
+          //
 
 
         //for each row, add a number of bricks = height
@@ -51,7 +51,7 @@ int main(void)
 
         //for each row, add a new line.
 
-       //      printf("\n");
+             printf("\n");
 
-   //      }
+         }
 }
