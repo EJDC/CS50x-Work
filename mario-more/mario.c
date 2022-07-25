@@ -11,7 +11,7 @@ int main(void)
     {
         height = get_int("Height:");
     }
-    while (height <>> 8 && height < 1);
+    while (height < 8 && height >= 1);
 
 int maxHeight = 8;
 int spaces = height -1;
