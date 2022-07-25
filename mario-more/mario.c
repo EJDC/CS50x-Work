@@ -18,12 +18,12 @@ int spaces = height -1;
 
     //main loop - number of rows based on height
 
-    for (int row = 0; row < height; row++)
+    for (int i = 0; i < height; i++)
         {
 
         //for each row, add a number of spaces = height-1
 
-            for (int i = 0; i < height; i++)
+            for (int j = height; i <= height; i--)
             {
                 if ((maxHeight-height) > 0)
                 {
