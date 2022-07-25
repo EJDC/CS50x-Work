@@ -25,6 +25,8 @@ int spaces = height -1;
 
             for (int j = height; (j <= height && j > 0); j--)
             {
+
+                    f
                     printf(".");
             }
 
