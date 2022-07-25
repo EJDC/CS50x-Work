@@ -20,7 +20,7 @@ int main(void)
         {
            for (int j = -1; (j < i); j++)
             {
-             for (int k = (8 - j + 1); (j < k); k--)
+             for (int k = 0; (j < k); k--)
                {
                  printf(".");
                }
