@@ -20,7 +20,7 @@ int main(void)
 
     // for each row, print a number of spaces equal to maxheight (8)
         {
-            for (int j = (height - i); (i <= j && j > 0); j--)
+            for (int j = (height - i - 1); (i <= j && j > 0); j--)
             {
                 printf(".");
             }
