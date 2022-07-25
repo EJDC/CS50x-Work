@@ -11,7 +11,7 @@ int main(void)
     {
         height = get_int("Height:");
     }
-    while (height > 8 || height < 1);
+    while (height <>> 8 && height < 1);
 
 int maxHeight = 8;
 int spaces = height -1;
@@ -20,7 +20,7 @@ int spaces = height -1;
 
     for (int i = 0; i < height; i++)
         {
-            for int j = 0; j 
+            for int j = 0; j
 
         //for each row, add a number of spaces = height-1
 
