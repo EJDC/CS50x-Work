@@ -17,12 +17,10 @@ int main(void)
     //main loop - number of rows based on height
 
     for (int i = 0; i < height; i++)
-
-    // for each row, print a number of spaces equal to maxheight (8)
         {
-            for (int j = (height - i - 1); (i <= j && j > 0); j--)
+            for (int j = (height); (i <= j && j > 0); j++)
             {
-                printf(".");
+                printf("#");
             }
 
         //for each row, add a number of spaces = height-1
