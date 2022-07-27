@@ -16,7 +16,7 @@ int main(void)
     {
         cents = get_cents();
     }
-    while (cents > 0);
+    while (cents < 0);
     printf("worked");
 
     // Calculate the number of quarters to give the customer
