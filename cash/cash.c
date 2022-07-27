@@ -52,7 +52,7 @@ int get_cents(void)
 int calculate_quarters(int cents)
 {
     // TODO
-    return (cents % 25);
+    return (cents);
 }
 
 int calculate_dimes(int cents)
