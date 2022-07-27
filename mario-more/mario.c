@@ -26,27 +26,27 @@ int main(void)
         printf(" ");
       }
 
-          // nested loop - prints left side hashes
+        // nested loop - prints left side hashes
 
       for (int j = -1; (j < i); j++)
       {
         printf("#");
       }
 
-          // prints two spaces
+        // prints two spaces
 
-          printf ("  ");
+        printf("  ");
 
-          // nested loop - prints right side hashes
+        // nested loop - prints right side hashes
 
-           for (int l = -1; (l < i); l++)
-               {
-                 printf("#");
-               }
+      for (int l = -1; (l < i); l++)
+      {
+         printf("#");
+      }
 
-          //for each row, add a new line.
+        //for each row, add a new line.
 
         printf("\n");
 
-         }
+    }
 }
