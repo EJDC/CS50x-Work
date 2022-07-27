@@ -14,9 +14,10 @@ int main(void)
 
     do
     {
-        cents = get_cents();
+        cents = get_int("Height:");
     }
-    while (cents < 0);
+    while (height < 1 || height > 8);
+
     printf("worked");
 
     // Calculate the number of quarters to give the customer
