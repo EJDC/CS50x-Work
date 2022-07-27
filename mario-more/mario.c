@@ -21,18 +21,20 @@ int main(void)
 
           // nested loop - prints blocks
 
+             for (int k = 7; (k > i); k--)
+               {
+                 printf(".");
+                }
+
+
            for (int j = -1; (j < i); j++)
             {
 
               // nested loop - prints spaces
 
-             for (int k = -1; (k < j); k++)
-               {
-                 printf(".");
-                }
-
                  printf("#");
             }
+
 
         //for each row, add a new line.
 
