@@ -42,7 +42,7 @@ int get_cents(void)
 
     do
     {
-         cents = get_int("No. of Cents:");
+        cents = get_int("No. of Cents:");
     }
     while (cents < 0);
 
@@ -52,7 +52,7 @@ int get_cents(void)
 int calculate_quarters(int cents)
 {
     // TODO - (cents / 25), round down and convert to an integer. If remainder of quarters divided by 25 = zero, then
-        return (cents / 25);
+    return (cents / 25);
 }
 
 int calculate_dimes(int cents)
