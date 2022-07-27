@@ -17,21 +17,21 @@ int main(void)
     //main loop - number of rows based on height
 
     for (int i = 0; i < height; i++)
-        {
+    {
 
-          // nested loop - prints spaces
+        // nested loop - prints spaces
 
-          for (int k = height - 1; (k > i); k--)
-              {
-                 printf(" ");
-              }
+      for (int k = height - 1; (k > i); k--)
+      {
+        printf(" ");
+      }
 
           // nested loop - prints left side hashes
 
-           for (int j = -1; (j < i); j++)
-               {
-                 printf("#");
-               }
+      for (int j = -1; (j < i); j++)
+      {
+        printf("#");
+      }
 
           // prints two spaces
 
