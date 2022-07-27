@@ -23,7 +23,7 @@ int main(void)
 
       for (int k = height - 1; (k > i); k--)
       {
-        printf(" ");
+            printf(" ");
       }
 
         // nested loop - prints left side hashes
