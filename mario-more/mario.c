@@ -21,17 +21,17 @@ int main(void)
 
         // nested loop - prints spaces
 
-      for (int k = height - 1; (k > i); k--)
-      {
+        for (int k = height - 1; (k > i); k--)
+        {
             printf(" ");
-      }
+        }
 
         // nested loop - prints left side hashes
 
-      for (int j = -1; (j < i); j++)
-      {
-        printf("#");
-      }
+        for (int j = -1; (j < i); j++)
+        {
+            printf("#");
+        }
 
         // prints two spaces
 
@@ -39,10 +39,10 @@ int main(void)
 
         // nested loop - prints right side hashes
 
-      for (int l = -1; (l < i); l++)
-      {
-         printf("#");
-      }
+        for (int l = -1; (l < i); l++)
+        {
+            printf("#");
+        }
 
         //for each row, add a new line.
 
