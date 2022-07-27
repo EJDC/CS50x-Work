@@ -23,7 +23,7 @@ int main(void)
 
           for (int k = height - 1; (k > i); k--)
               {
-                 printf(".");
+                 printf(" ");
               }
 
           // nested loop - prints left side hashes
@@ -33,10 +33,20 @@ int main(void)
                  printf("#");
                }
 
+          // prints two spaces
 
-        //for each row, add a new line.
+          printf ("  ");
 
-             printf("\n");
+          // nested loop - prints right side hashes
+
+           for (int l = -1; (l < i); l++)
+               {
+                 printf("#");
+               }
+
+          //for each row, add a new line.
+
+        printf("\n");
 
          }
 }
