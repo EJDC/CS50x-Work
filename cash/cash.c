@@ -14,7 +14,7 @@ int main(void)
 
     do
     {
-        cents = get_int "Number of Cents:"
+        cents = get_cents "Number of Cents:"
     }
     while (cents > 0)
     printf("worked")
