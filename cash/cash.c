@@ -14,10 +14,10 @@ int main(void)
 
     do
     {
-        cents = get_cents("Number of Cents:");
+        cents = get_cents();
     }
-    while (cents > 0)
-    printf("worked")
+    while (cents > 0);
+    printf("worked");
 
     // Calculate the number of quarters to give the customer
     int quarters = calculate_quarters(cents);
