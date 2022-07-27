@@ -19,21 +19,19 @@ int main(void)
     for (int i = 0; i < height; i++)
         {
 
-          // nested loop - prints blocks
+          // nested loop - prints spaces
 
-             for (int k = height - 1; (k > i); k--)
-               {
+          for (int k = height - 1; (k > i); k--)
+              {
                  printf(".");
-                }
+              }
 
+          // nested loop - prints hashes
 
            for (int j = -1; (j < i); j++)
-            {
-
-              // nested loop - prints spaces
-
+               {
                  printf("#");
-            }
+               }
 
 
         //for each row, add a new line.
