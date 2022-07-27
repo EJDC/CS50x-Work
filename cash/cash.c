@@ -51,9 +51,8 @@ int get_cents(void)
 
 int calculate_quarters(int cents)
 {
-    // TODO - (cents / 25), convert to an integer. If remainder of quarters divided by 25 = zero, then
-    if
-    return (cents % 25);
+    // TODO - (cents / 25), round down and convert to an integer. If remainder of quarters divided by 25 = zero, then
+        return (cents / 25);
 }
 
 int calculate_dimes(int cents)
