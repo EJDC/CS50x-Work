@@ -26,7 +26,7 @@ int main(void)
                  printf(".");
               }
 
-          // nested loop - prints hashes
+          // nested loop - prints left side hashes
 
            for (int j = -1; (j < i); j++)
                {
