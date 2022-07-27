@@ -21,7 +21,7 @@ int main(void)
 
           // nested loop - prints blocks
 
-             for (int k = 8; (k < i); k++)
+             for (int k = 8 - i; (k < height); k++)
                {
                  printf(".");
                 }
