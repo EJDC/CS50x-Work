@@ -24,8 +24,8 @@ int main(void)
     int sents = count_sentences(s);
     printf("%i sentences\n", sents);
 
-float al = 100 / letters;
-float as = 100 / sents;
+float al = (100 / letters) * 100;
+float as = (100 / sents) * 100;
 float grade = (0.588 * al) - (0.296 * as) - 15.8;
 printf("%f grade\n", grade);
 
