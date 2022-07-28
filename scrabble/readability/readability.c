@@ -17,21 +17,27 @@ int main(void)
     while (strlen(s) < 1);
 
     float letters = count_letters(s);
-   // printf("%f letters\n", letters);
     float words = count_words(s);
-  //  printf("%f words\n", words);
     float sents = count_sentences(s);
-  //  printf("%f sentences\n", sents);
 
-float al = (letters / words) * 100;
-//printf("%f average letters\n", al);
+    float al = (letters / words) * 100;
+    float as = (sents / words) * 100;
 
-float as = (sents / words) * 100;
-//printf("%f average sentences\n", as);
+    int grade = round(0.0588 * al - 0.296 * as -15.8);
 
-int grade = round(0.0588 * al - 0.296 * as -15.8);
+    if (grade < 1)
+    {
+        printf("Before Grade 1");
+    }
+    else if (grade >= 16)
+    {
+        printf("Grade 16+");
+    }
+    else
+    {
+        printf("Grade %i\n", grade);
+    }
 
-printf("Grade %i\n", grade);
 
 }
 
