@@ -5,6 +5,7 @@
 
 int count_letters(string s);
 int count_words(string s);
+int count_sentences(string s);
 
 int main(void)
 {
@@ -18,6 +19,8 @@ int main(void)
     printf("%i letters\n", letters);
     int words = count_words(s);
     printf("%i words\n", words);
+    int sents = count_sentences(s);
+    printf("%i sents\n", sentences);
 }
 
 int count_letters(string s)
@@ -42,4 +45,16 @@ int count_words(string s)
            }
 
         return w;
+}
+
+int count_sentences(string s);
+{
+    int c = 0;
+       for (int i = 0, n = strlen(s); i < n; i++)
+           if (isalpha(s[i]))
+           {
+            c += 1;
+           }
+
+        return c;
 }
