@@ -51,7 +51,7 @@ int count_sentences(string s);
 {
     int c = 0;
        for (int i = 0, n = strlen(s); i < n; i++)
-           if (isalpha(s[i]))
+           if (strcomp(s[i]))
            {
             c += 1;
            }
