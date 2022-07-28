@@ -9,7 +9,7 @@ int main(void)
 {
     string s = get_string("Text: ");
     int count = count_letters(s);
-    printf(%i, count);
+    printf("%i letters\n", count);
 }
 
 int count_letters(string s)
@@ -21,6 +21,6 @@ int count_letters(string s)
             c += 1;
            }
 
-        return c
+        return c;
 
 }
