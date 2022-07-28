@@ -29,6 +29,8 @@ int count_letters(string s)
 
 int count_words(string s)
 {
+    if (letters > 1)
+    {
     int w = 1;
        for (int i = 0, n = strlen(s); i < n; i++)
            if (isspace(s[i]))
@@ -37,4 +39,6 @@ int count_words(string s)
            }
 
         return w;
+    }
+    return 0;
 }
