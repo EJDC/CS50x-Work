@@ -24,7 +24,10 @@ int main(void)
     int sents = count_sentences(s);
     printf("%i sentences\n", sents);
 
-    
+float al = letters/100
+float as =
+float grade = 0.588 * al - 0.296 * as -15.8
+
 }
 
 int count_letters(string s)
