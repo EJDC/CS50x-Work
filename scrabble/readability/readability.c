@@ -29,7 +29,7 @@ int count_letters(string s)
 
 int count_words(string s)
 {
-    int w = 0;
+    int w = 1;
        for (int i = 0, n = strlen(s); i < n; i++)
            if (isspace(s[i]))
            {
