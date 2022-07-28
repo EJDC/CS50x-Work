@@ -33,6 +33,8 @@ int compute_score(string word)
         return(1);
         }
         else
+        {
         return(2);
+        }
     }
 }
