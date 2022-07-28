@@ -31,7 +31,7 @@ printf("%f average letters\n", al);
 float as = (sents / words2) * 100;
 printf("%f average sentences\n", as);
 
-int grade = round(0.0588 * al - 0.296 * as - 15.8);
+int grade = round(0.0588 * al - 0.296 * as -15.8);
 
 printf("%i grade\n", grade);
 
