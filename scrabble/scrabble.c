@@ -30,6 +30,7 @@ int compute_score(string word)
     {
         if (isupper(word[i]))
         {
+            score += POINTS
      //   tolower(word[i]);
       //  printf(word[i]);
         return(1);
