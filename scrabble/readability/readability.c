@@ -53,7 +53,7 @@ int count_sentences(string s)
 {
     int c = 0;
        for (int i = 0, n = strlen(s); i < n; i++)
-           if (strcmp(s[i], ".") == 0)
+           if (strstr(s[i], "."))
            {
             c += 1;
            }
