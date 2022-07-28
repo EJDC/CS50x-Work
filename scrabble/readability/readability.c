@@ -31,9 +31,9 @@ int count_words(string s)
 {
     int w = 0;
        for (int i = 0, n = strlen(s); i < n; i++)
-           if (isalpha(s[i]))
+           if (isspace(s[i]))
            {
-            c += 1;
+            w += 1;
            }
 
         return w;
