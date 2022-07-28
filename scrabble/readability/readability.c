@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <ctype.h>
 
 int count_letters(string s)
 
@@ -10,5 +11,5 @@ int main(void)
 
 int count_letters(string s)
 {
-    strlength(s)
+    ifstrlength(s)
 }
