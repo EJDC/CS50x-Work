@@ -22,7 +22,7 @@ int main(void)
     int words = count_words(s);
     printf("%i words\n", words);
     int sents = count_sentences(s);
-    printf("%i sents\n", sents);
+    printf("%i sentences\n", sents);
 }
 
 int count_letters(string s)
@@ -51,12 +51,12 @@ int count_words(string s)
 
 int count_sentences(string s)
 {
-    int c = 0;
+    int t = 0;
        for (int i = 0, n = strlen(s); i < n; i++)
-           if ((s[i], "."))
+           if (s[i] == 46 || s[i] == 33 || s[i] == 63)
            {
-            c += 1;
+            t += 1;
            }
 
-        return c;
+        return t;
 }
