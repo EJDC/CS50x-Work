@@ -28,7 +28,7 @@ int compute_score(string word)
     {
         if (word[i] >= 'A' && word[i] <= 'Z')
         {
-           printf("%c", word[i]);
+           return(, word[i]);
         }
     }
 }
