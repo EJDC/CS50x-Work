@@ -30,7 +30,7 @@ int compute_score(string word)
         {
         tolower(word[i]);
         printf(word[i]);
-        return(i);
+        return(0);
         }
         else
         return(0)
