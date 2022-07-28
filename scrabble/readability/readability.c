@@ -20,7 +20,7 @@ int main(void)
     int words = count_words(s);
     printf("%i words\n", words);
     int sents = count_sentences(s);
-    printf("%i sents\n", sentences);
+    printf("%i sents\n", sents);
 }
 
 int count_letters(string s)
@@ -51,7 +51,7 @@ int count_sentences(string s);
 {
     int c = 0;
        for (int i = 0, n = strlen(s); i < n; i++)
-           if (strcomp(s[i]))
+           if (strcomp(s[i]), ".")
            {
             c += 1;
            }
