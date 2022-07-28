@@ -8,7 +8,9 @@ int count_words(string s);
 
 int main(void)
 {
+    do
     string s = get_string("Text: ");
+    while (s > 1)
     int letters = count_letters(s);
     printf("%i letters\n", letters);
     int words = count_words(s);
@@ -29,8 +31,6 @@ int count_letters(string s)
 
 int count_words(string s)
 {
-    if (letters > 1)
-    {
     int w = 1;
        for (int i = 0, n = strlen(s); i < n; i++)
            if (isspace(s[i]))
@@ -39,6 +39,4 @@ int count_words(string s)
            }
 
         return w;
-    }
-    return 0;
 }
