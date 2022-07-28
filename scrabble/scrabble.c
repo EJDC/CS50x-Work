@@ -22,11 +22,11 @@ int main(void)
 
     if (score1 > score2)
     {
-        printf("Winner Player 1!\n");
+        printf("Player 1 wins!\n");
     }
     else if (score1 < score2)
     {
-        printf("Winner Player 2!\n");
+        printf("Player 2 wins!\n");
     }
     else
     {
