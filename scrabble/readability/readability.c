@@ -25,7 +25,7 @@ int main(void)
     printf("%i sentences\n", sents);
 
 float al = letters/100;
-float as = words/100;
+float as = sents/100;
 float grade = (0.588 * al) - (0.296 * as) - 15.8;
 printf("%f grade\n", grade);
 
