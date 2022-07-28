@@ -13,7 +13,9 @@ int main(void)
     string s;
 
     do
-    s = get_string("Text: ");
+    {
+        s = get_string("Text: ");
+    }
     while (strlen(s) < 1);
 
     float letters = count_letters(s);
@@ -23,7 +25,7 @@ int main(void)
     float al = (letters / words) * 100;
     float as = (sents / words) * 100;
 
-    int grade = round(0.0588 * al - 0.296 * as -15.8);
+    int grade = round(0.0588 * al - 0.296 * as - 15.8);
 
     if (grade < 1)
     {
@@ -44,35 +46,35 @@ int main(void)
 int count_letters(string s)
 {
     int c = 0;
-       for (int i = 0, n = strlen(s); i < n; i++)
-           if (isalpha(s[i]))
-           {
+    for (int i = 0, n = strlen(s); i < n; i++)
+        if (isalpha(s[i]))
+        {
             c += 1;
-           }
+        }
 
-        return c;
+    return c;
 }
 
 int count_words(string s)
 {
     int w = 1;
-       for (int i = 0, n = strlen(s); i < n; i++)
-           if (isspace(s[i]))
-           {
+    for (int i = 0, n = strlen(s); i < n; i++)
+        if (isspace(s[i]))
+        {
             w += 1;
-           }
+        }
 
-        return w;
+    return w;
 }
 
 int count_sentences(string s)
 {
     int t = 0;
-       for (int i = 0, n = strlen(s); i < n; i++)
-           if (s[i] == 33 || s[i] == 46 || s[i] == 63)
-           {
+    for (int i = 0, n = strlen(s); i < n; i++)
+        if (s[i] == 33 || s[i] == 46 || s[i] == 63)
+        {
             t += 1;
-           }
+        }
 
-        return t;
+    return t;
 }
