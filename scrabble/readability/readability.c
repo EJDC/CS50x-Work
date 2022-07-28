@@ -24,10 +24,10 @@ int main(void)
     int sents = count_sentences(s);
     printf("%i sentences\n", sents);
 
-float al = (100 / letters) * 100;
+float al = (letters / words) * 100;
 printf("%f average letters\n", al);
 
-float as = (100 / sents) * 100;
+float as = (sents / words) * 100;
 printf("%f average sentences\n", as);
 
 float grade = 0.588 * al - 0.296 * as - 15.8;
