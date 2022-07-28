@@ -32,5 +32,7 @@ int compute_score(string word)
         printf(word[i]);
         return(0);
         }
+        else
+        return(1)
     }
 }
