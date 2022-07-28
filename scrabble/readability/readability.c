@@ -16,19 +16,17 @@ int main(void)
     s = get_string("Text: ");
     while (strlen(s) < 1);
 
-    int letters = count_letters(s);
-    printf("%i letters\n", letters);
-    int words = count_words(s);
-    printf("%i words\n", words);
-    int sents = count_sentences(s);
-    printf("%i sentences\n", sents);
+    float letters = count_letters(s);
+    printf("%f letters\n", letters);
+    float words = count_words(s);
+    printf("%f words\n", words);
+    float sents = count_sentences(s);
+    printf("%f sentences\n", sents);
 
-    float words2 = words;
-
-float al = (letters / words2) * 100;
+float al = (letters / words) * 100;
 printf("%f average letters\n", al);
 
-float as = (sents / words2) * 100;
+float as = (sents / words) * 100;
 printf("%f average sentences\n", as);
 
 int grade = round(0.0588 * al - 0.296 * as -15.8);
