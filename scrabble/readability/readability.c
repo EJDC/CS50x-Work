@@ -53,7 +53,7 @@ int count_sentences(string s)
 {
     int t = 0;
        for (int i = 0, n = strlen(s); i < n; i++)
-           if (s[i] == 46 || s[i] == 33 || s[i] == 63)
+           if (s[i] == 33 || s[i] == 46 || s[i] == 63)
            {
             t += 1;
            }
