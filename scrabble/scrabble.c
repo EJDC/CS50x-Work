@@ -28,11 +28,11 @@ int compute_score(string word)
     {
         if (isupper(word[i]))
         {
-        tolower(word[i]);
-        printf(word[i]);
-        return(0);
+     //   tolower(word[i]);
+      //  printf(word[i]);
+        return(1);
         }
         else
-        return(0)
+        return(2);
     }
 }
