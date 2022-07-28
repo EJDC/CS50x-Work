@@ -32,9 +32,8 @@ int compute_score(string word)
       //  printf(word[i]);
         return(1);
         }
-        else
-        {
+
         return(2);
-        }
     }
+
 }
