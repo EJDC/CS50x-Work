@@ -28,7 +28,7 @@ int compute_score(string word)
     {
         if (isupper(word[i]))
         {
-        tolower((word[i]));
+        tolower(word[i]);
         printf(word[i]);
         return(i);
         }
