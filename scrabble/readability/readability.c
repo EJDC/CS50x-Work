@@ -23,6 +23,8 @@ int main(void)
     printf("%i words\n", words);
     int sents = count_sentences(s);
     printf("%i sentences\n", sents);
+
+    
 }
 
 int count_letters(string s)
