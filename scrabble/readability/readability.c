@@ -11,7 +11,7 @@ int main(void)
     string s;
     do
     s = get_string("Text: ");
-    while (strlen(s) < 0);
+    while (strlen(s) < 1);
     int letters = count_letters(s);
     printf("%i letters\n", letters);
     int words = count_words(s);
