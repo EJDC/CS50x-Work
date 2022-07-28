@@ -31,7 +31,7 @@ float as = (sents / words) * 100;
 
 int grade = round(0.0588 * al - 0.296 * as -15.8);
 
-printf("Grade %i \n", grade);
+printf("Grade %i\n", grade);
 
 }
 
