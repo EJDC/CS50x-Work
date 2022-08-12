@@ -1,4 +1,4 @@
-sort1 uses: Selection
+sort1 uses: Bubble
 
 How do you know?: Takes longest to sort both random and sorted lists.
 
@@ -6,6 +6,6 @@ sort2 uses: Merge
 
 How do you know?: Fastest to sort random (should take longest to sort )
 
-sort3 uses: Bubble
+sort3 uses: Selection
 
 How do you know?: Took same amount of time to sort random and sorted 50k lists.
