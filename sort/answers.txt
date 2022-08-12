@@ -1,10 +1,10 @@
 sort1 uses: Merge
 
-How do you know?: Fastest to sort random
+How do you know?:
 
-sort2 uses: TODO
+sort2 uses: Merge
 
-How do you know?: TODO
+How do you know?: Fastest to sort random (should take longest to sort )
 
 sort3 uses: TODO
 
