@@ -1,6 +1,6 @@
-sort1 uses: TODO
+sort1 uses: Merge
 
-How do you know?: TODO
+How do you know?: Fastest to sort random
 
 sort2 uses: TODO
 
