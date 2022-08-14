@@ -68,9 +68,11 @@ bool vote(string name)
 {
     // TODO
     if (strcmp(candidates.name, name))
-
-
+    {
+        printf("yes")
     return true;
+    }
+  
     return false;
 }
 
