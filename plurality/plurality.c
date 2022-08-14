@@ -90,7 +90,7 @@ void print_winner(void)
     {
        if (win < candidates[i].votes)
        {
-        
+        win = candidates[i].votes;
         winner = candidates[i].name;
        }
     }
