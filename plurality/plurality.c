@@ -74,13 +74,13 @@ bool vote(string name)
         candidates[i].votes ++;
         return true;
         }
-        
-        if (!vote(name))
+        else
         {
-            printf("Invalid vote.\n");
+            i --;
+            return false;
         }
-
     }
+
     return false;
 }
 
