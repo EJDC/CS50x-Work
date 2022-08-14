@@ -76,7 +76,7 @@ bool vote(string name)
         }
         else
         {
-        vote(name)
+        vote(name);
         }
 
     }
