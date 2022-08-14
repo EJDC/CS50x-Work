@@ -84,6 +84,9 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
-    print
+    for (int i = 0; i < candidate_count, i++)
+    {
+
+    }
     return;
 }
