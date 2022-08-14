@@ -67,12 +67,18 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
-    if (strcmp(candidates.name, name))
+    for (int i - 0; i < candidate_count; i++)
     {
+        if (strcmp(candidates[i].name, name))
+        {
         printf("yes")
+        }
+    }
+
+    {
     return true;
     }
-  
+
     return false;
 }
 
