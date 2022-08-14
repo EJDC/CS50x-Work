@@ -67,7 +67,7 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
-    if (strcmp(names))
+    if (strcmp(candidates.name, name))
 
 
     return true;
