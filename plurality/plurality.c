@@ -67,6 +67,8 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
+
+    
     return true;
     return false;
 }
