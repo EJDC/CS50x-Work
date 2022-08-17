@@ -174,7 +174,7 @@ bool print_winner(void)
 
     for(int i = 0; i< candidate_count; i++)
     {
-        int j = (candidates[i].votes/voter_count)*100;
+        int j = (candidates[i].votes / voter_count)*100;
         if(j >= 50)
         {
             printf("%s\n", candidates[i].name);
