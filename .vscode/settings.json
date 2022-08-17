@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "random": "c"
+        "random": "c",
+        "string.h": "c"
     },
     "gitdoc.enabled": true
 }
