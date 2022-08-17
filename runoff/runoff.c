@@ -171,9 +171,16 @@ bool print_winner(void)
     // TODO
     //go through each candidate
 
+
     for(int i = 0; i< candidate_count; i++)
     {
-        voter_count
+        int j = (candidate_count/voter_count)*100;
+        if(candidates[i].votes >= 50)
+        {
+            
+        }
+
+        printf()
     }
     return false;
 }
