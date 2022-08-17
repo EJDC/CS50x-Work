@@ -145,6 +145,14 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
+    for(int i = 0; i < voter_count; )
+
+// if candidate is not eliminated
+
+// add a vote to the candidates[i].votes
+
+// break
+
 
 
     return;
