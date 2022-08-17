@@ -153,9 +153,9 @@ void tabulate(void)
         for(int j = 0; j < candidate_count; j++)
         {
             int k = preferences[i][j];
-            printf("%i\n", k);
             if(!candidates[k].eliminated)
             {
+                printf("%i\n", k);
                 candidates[k].votes++;
                 break;
             }
