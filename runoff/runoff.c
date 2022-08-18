@@ -174,9 +174,9 @@ bool print_winner(void)
 
     for(int i = 0; i < candidate_count; i++)
     {
-        float k = voter_count;
-        float l = (candidates[i].votes / k)*100;
-        if (l >= 50)
+        float j = voter_count;
+        float k = (candidates[i].votes / j)*100;
+        if (k >= 50)
         {
             printf("%s\n", candidates[i].name);
             return true;
