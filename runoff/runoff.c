@@ -130,7 +130,7 @@ bool vote(int voter, int rank, string name)
 {
     // TODO
     // go through each candidate
-     for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         // if name matches a candidate
         if (strcmp(candidates[i].name, name) == 0)
@@ -152,12 +152,12 @@ void tabulate(void)
     for (int i = 0; i < voter_count; i++)
     {
         //go through each candidate
-        for(int j = 0; j < candidate_count; j++)
+        for (int j = 0; j < candidate_count; j++)
         {
             //k is the position in the 2D array for voter i and candidate j.
             int k = preferences[i][j];
             //if candidate is not eliminated, add a vote
-            if(!candidates[k].eliminated)
+            if (!candidates[k].eliminated)
             {
                 candidates[k].votes++;
                 break;
@@ -174,12 +174,12 @@ bool print_winner(void)
 {
     // TODO
     //go through each candidate
-    for(int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         //turn one number into a float so math works
         float j = voter_count;
         //convert to percentage
-        float k = (candidates[i].votes / j)*100;
+        float k = (candidates[i].votes / j) * 100;
         //if greater than 50% print candidate name
         if (k > 50)
         {
