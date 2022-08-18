@@ -242,13 +242,10 @@ void eliminate(int min)
         if (!candidates[i].eliminated && candidates[i].votes == min)
         {
             {
-                 candidates[i].eliminated
-                 return;
+                 candidates[i].eliminated= true;
             }
         }
 
     }
-    return true;
-
     return;
 }
