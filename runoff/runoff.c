@@ -180,8 +180,8 @@ bool print_winner(void)
         float j = voter_count;
         //convert to percentage
         float k = (candidates[i].votes / j)*100;
-        //if 50% or greater print candidate name
-        if (k >= 50)
+        //if greater than 50% print candidate name
+        if (k > 50)
         {
             printf("%s\n", candidates[i].name);
             return true;
