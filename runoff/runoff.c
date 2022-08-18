@@ -179,8 +179,14 @@ bool print_winner(void)
       // float l = j / y;
       // float k = l*100;
       // if (k >= 50)
-      float j = (candidates[i].votes / voter_count) * 100.0;
-      if(j >= 50)
+
+        int j = candidates[i].votes;
+        float y = voter_count;
+        float l = (j / y)*100.0;
+        if (l >= 50)
+
+
+    //  if(j >= 50)
         {
             printf("%s\n", candidates[i].name);
             return true;
