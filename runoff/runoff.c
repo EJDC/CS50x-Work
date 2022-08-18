@@ -172,7 +172,7 @@ bool print_winner(void)
     //go through each candidate
 
 
-    for(int i = 0; i< candidate_count; i++)
+    for(int i = 0; i < candidate_count; i++)
     {
         int j = (candidates[i].votes / voter_count)*100;
         if(j >= 50)
