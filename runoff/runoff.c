@@ -176,7 +176,7 @@ bool print_winner(void)
     {
        int j = candidates[i].votes;
    //    float k = 100*j;
-       int y = voter_count;
+       float y = voter_count;
        float l = j / y;
     float k = l*100;
        if (k >= 50)
