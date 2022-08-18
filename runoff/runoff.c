@@ -200,7 +200,7 @@ int find_min(void)
     for (int i = 0; i < candidate_count; i++)
     {
         //if candidate is not eliminated and has less votes than j
-        if (!candidates[i].eliminated && j < candidates[i].votes)
+        if (!candidates[i].eliminated && candidates[i].votes < j)
         {
             {
                  j = candidates[i].votes;
