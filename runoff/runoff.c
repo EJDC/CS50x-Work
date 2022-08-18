@@ -155,8 +155,9 @@ void tabulate(void)
         //go through each candidate
         for(int j = 0; j < candidate_count; j++)
         {
-            //
+            //k is the position in the 2D array.
             int k = preferences[i][j];
+            //if candidate is not eliminated, add a vote
             if(!candidates[k].eliminated)
             {
                 candidates[k].votes++;
