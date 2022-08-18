@@ -135,7 +135,7 @@ bool vote(int voter, int rank, string name)
         // if name matches a candidate
         if (strcmp(candidates[i].name, name) == 0)
         {
-            //record position in array and return true
+            //record position in preferences array and return true
             preferences[voter][rank] = i;
             return true;
         }
@@ -155,6 +155,7 @@ void tabulate(void)
         //go through each candidate
         for(int j = 0; j < candidate_count; j++)
         {
+            //
             int k = preferences[i][j];
             if(!candidates[k].eliminated)
             {
