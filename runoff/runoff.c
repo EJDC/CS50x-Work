@@ -203,7 +203,7 @@ int find_min(void)
         if (!candidates[i].eliminated && candidates[i].votes < j)
         {
             {
-                 j = candidates[i].votes;
+                j = candidates[i].votes;
             }
         }
 
@@ -222,7 +222,7 @@ bool is_tie(int min)
         if (!candidates[i].eliminated && candidates[i].votes > min)
         {
             {
-                 return false;
+                return false;
             }
         }
 
@@ -242,7 +242,7 @@ void eliminate(int min)
         if (!candidates[i].eliminated && candidates[i].votes == min)
         {
             {
-                 candidates[i].eliminated= true;
+                candidates[i].eliminated = true;
             }
         }
 
