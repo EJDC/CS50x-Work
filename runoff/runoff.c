@@ -199,7 +199,6 @@ int find_min(void)
     //go through each candidate
     for (int i = 0; i < candidate_count; i++)
     {
-
         //if candidate is not eliminated and has less votes than j
         if (!candidates[i].eliminated && j < candidates[i].votes)
         {
