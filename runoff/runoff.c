@@ -148,14 +148,13 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
-
-// go through each voter
+    // go through each voter
     for (int i = 0; i < voter_count; i++)
     {
         //go through each candidate
         for(int j = 0; j < candidate_count; j++)
         {
-            //k is the position in the 2D array.
+            //k is the position in the 2D array for voter i and candidate j.
             int k = preferences[i][j];
             //if candidate is not eliminated, add a vote
             if(!candidates[k].eliminated)
@@ -175,18 +174,18 @@ bool print_winner(void)
 {
     // TODO
     //go through each candidate
-
-
     for(int i = 0; i < candidate_count; i++)
     {
+        //turn one number into a float so math works
         float j = voter_count;
+        //convert to percentage
         float k = (candidates[i].votes / j)*100;
+        //if 50% or greater print candidate name
         if (k >= 50)
         {
             printf("%s\n", candidates[i].name);
             return true;
         }
-
     }
     return false;
 }
