@@ -129,10 +129,13 @@ int main(int argc, string argv[])
 bool vote(int voter, int rank, string name)
 {
     // TODO
+    // go through each candidate
      for (int i = 0; i < candidate_count; i++)
     {
+        // if name matches a candidate
         if (strcmp(candidates[i].name, name) == 0)
         {
+            //record position in array and return true
             preferences[voter][rank] = i;
             return true;
         }
