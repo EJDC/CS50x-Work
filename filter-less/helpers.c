@@ -77,8 +77,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
             //change the currently iterated pixel to it's opposite side
             image[i][j].rgbtRed = image[i][width - (j + 1)].rgbtRed;
-            image[i][j].rgbtBlue = image[i][width - 1 - j].rgbtBlue;
-            image[i][j].rgbtGreen = image[i][width - 1 - j].rgbtGreen;
+            image[i][j].rgbtBlue = image[i][width - (j + 1)].rgbtBlue;
+            image[i][j].rgbtGreen = image[i][width - (j + 1)].rgbtGreen;
 
             //make the opposite side the temporary variable
             image[i][width - 1 - j].rgbtRed;
