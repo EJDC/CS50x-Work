@@ -81,9 +81,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtGreen = image[i][width - (j + 1)].rgbtGreen;
 
             //make the opposite side the temporary variable
-            image[i][width - (j + 1)].rgbtRed;
-            image[i][width - (j + 1)].rgbtBlue;
-            image[i][width - (j + 1)].rgbtGreen;
+            image[i][width - (j + 1)].rgbtRed = tempRed;
+            image[i][width - (j + 1)].rgbtBlue = tempBlue;
+            image[i][width - (j + 1)].rgbtGreen = tempGreen;
 
 
         }
