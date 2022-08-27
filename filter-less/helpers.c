@@ -8,6 +8,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            //calculate rounded average
             int n = round((image[i][j].rgbtRed + image[i][j].rgbtBlue + image[i][j].rgbtGreen)/3.0);
             image[i][j].rgbtRed = n;
             image[i][j].rgbtBlue = n;
@@ -24,10 +25,12 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            //calculate sepia
             int red = round(.393 * image[i][j].rgbtRed + .769 * image[i][j].rgbtGreen + .189 * image[i][j].rgbtBlue);
             int blue = round(.272 * image[i][j].rgbtRed  + .534 * image[i][j].rgbtGreen + .131 * image[i][j].rgbtBlue);
             int green = round(.349 * image[i][j].rgbtRed + .686 * image[i][j].rgbtGreen + .168 * image[i][j].rgbtBlue);
 
+            //round down to 255 if needed
             if (red > 255)
             {
                 image[i][j].rgbtRed = 255;
@@ -64,12 +67,17 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < width; j++)
+        //only iterate through half the image this time
+        for (int j = 0; j < width/2; j++)
         {
-            int n = round((image[i][j].rgbtRed + image[i][j].rgbtBlue + image[i][j].rgbtGreen)/3.0);
-            image[i][j].rgbtRed = n;
-            image[i][j].rgbtBlue = n;
-            image[i][j].rgbtGreen =n;
+            //store left hand side original pixel in temp variable
+            int tempRed = image[i][j].rgbtRed;
+            int tempGreen = image[i][j].rgbtGreen;
+            int tempBlue = image[i][j].rgbtBlue;
+
+            //shift the opposite right hand side pixel to the left.
+            
+
         }
     }
     return;
