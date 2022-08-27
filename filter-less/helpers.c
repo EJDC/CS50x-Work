@@ -9,10 +9,10 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             //calculate rounded average
-            int n = round((image[i][j].rgbtRed + image[i][j].rgbtBlue + image[i][j].rgbtGreen)/3.0);
+            int n = round((image[i][j].rgbtRed + image[i][j].rgbtBlue + image[i][j].rgbtGreen) / 3.0);
             image[i][j].rgbtRed = n;
             image[i][j].rgbtBlue = n;
-            image[i][j].rgbtGreen =n;
+            image[i][j].rgbtGreen = n;
         }
     }
     return;
@@ -68,7 +68,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     for (int i = 0; i < height; i++)
     {
         //only iterate through half the image this time
-        for (int j = 0; j < width/2; j++)
+        for (int j = 0; j < width / 2; j++)
         {
             //store left hand side original pixel in temp variable
             int tempRed = image[i][j].rgbtRed;
@@ -84,8 +84,6 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             image[i][width - (j + 1)].rgbtRed = tempRed;
             image[i][width - (j + 1)].rgbtBlue = tempBlue;
             image[i][width - (j + 1)].rgbtGreen = tempGreen;
-
-
         }
     }
     return;
