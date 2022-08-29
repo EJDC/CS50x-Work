@@ -118,19 +118,24 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int l = -1; l < 2; l++)
                 {
-                //check if pixel is outside rows ie. if pixel +
+                //check if pixel is outside rows (ie. if pixel + row iteration is less than zero, or greater than height)
                 if (i + k < 0 || i + k >= height)
                 {
+                    //skip
                     continue;
                 }
+                //check if pixel is outside columns (ie. if pixel + column iteration is less than zero, or greater than width)
                 if (j + l < 0 || j + l >= width)
                 {
                     continue;
                 }
 
+                //pixel does exist, so add the totals to the temporary array
                 total_red += temp[i + k][j + l].rgbtRed;
                 total_blue += temp[i + k][j + l].rgbtBlue;
                 total_green += temp[i + k][j + l].rgbtGreen;
+
+                //pixel exists, so add one divider
                 divider++;
                 }
             }
