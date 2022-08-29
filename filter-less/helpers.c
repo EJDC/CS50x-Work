@@ -103,9 +103,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     }
 
     //loop through each pixel in the temp array
-    for (int i = 0; i < height; i++)
+    for (int k = 0; k < height; k++)
     {
-        for (int j = 0; j < width; j++)
+        for (int l = 0; l < width; l++)
         {
             //check if there is a pixel to the left - compare to width of image(?)
             if (temp[i][j - 1] != 0)
