@@ -113,11 +113,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             float total_green = 0;
             int divider = 0;
 
-            //for each pixel, loop through
+            //for each pixel, loop through -1 > +1 (3 times) for height and width
             for (int k = -1; k < 2; k++)
             {
                 for (int l = -1; l < 2; l++)
                 {
+                //check if pixel is outside rows ie. if pixel +
                 if (i + k < 0 || i + k >= height)
                 {
                     continue;
