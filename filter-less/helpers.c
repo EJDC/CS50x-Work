@@ -140,6 +140,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
+            //set original image to rounded total.
             image[i][j].rgbtRed = round(total_red / divider);
             image[i][j].rgbtGreen = round(total_green / divider);
             image[i][j].rgbtBlue = round(total_blue / divider);
