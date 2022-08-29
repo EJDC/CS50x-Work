@@ -98,12 +98,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            temp[i][j] = image[i][j]
+            temp[i][j] = image[i][j];
         }
     }
 
     //loop through each pixel in the temp array
-    for (int i = 0; k < height; i++)
+    for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
