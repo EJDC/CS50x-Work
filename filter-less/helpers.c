@@ -93,14 +93,13 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
 
-    //store entire image in temp array, as pixel values in the original array will be changed as we iterate through.
+    //first copy entire image in temp array, as pixel values in the original array will be changed as we iterate through.
 
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            //calculate rounded average
-            int n = round((image[i][j].rgbtRed + image[i][j].rgbtBlue + image[i][j].rgbtGreen) / 3.0);
+
             image[i][j].rgbtRed = n;
             image[i][j].rgbtBlue = n;
             image[i][j].rgbtGreen = n;
