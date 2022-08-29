@@ -92,17 +92,30 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-
-    //first copy entire image in temp array, as pixel values in the original array will be changed as we iterate through.
-
+    //copy entire image in temp array of triples, as pixel values in the original array will be changed as we iterate through.
+    RGBTRIPLE temp[height][width];
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            image[i][j].rgbtRed = n;
-            image[i][j].rgbtBlue = n;
-            image[i][j].rgbtGreen = n;
+            temp[i][j] = image[i][j]
         }
     }
+
+    //loop through each pixel in the temp array
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            //check if there is a pixel in top left
+
+                //if there is, 
+
+            //check if there is a pixel in top right
+            temp[i][j] = image[i][j]
+        }
+    }
+
+
     return;
 }
