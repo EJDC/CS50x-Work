@@ -109,10 +109,20 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             //check if there is a pixel in top left
 
-                //if there is, 
+                //if there is a pixel in the top left, add the values of the pixel and the one to the right to calculation.  Add 2 to "divider" variable.
 
             //check if there is a pixel in top right
-            temp[i][j] = image[i][j]
+
+                //if there is a pixel in the top right, add the values of the pixel and the one below to calculation. Add 2 to "divider" variable.
+
+            //check if there is a pixel in the bottom right.
+
+                //if there is a pixel in the bottom right, add the values of the pixel and the one to the left to calulation. Add 2 to "divider" variable.
+
+            //check if there is a pixel in the bottom left.
+
+                //if there is a pixel ib the bottom left, add the values of the pixel and the one above to calculation. Add 2 to divider variable.
+
         }
     }
 
