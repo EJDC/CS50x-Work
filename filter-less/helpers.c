@@ -102,16 +102,18 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    //loop through each pixel in the temp array
+    //loop through each pixel in the image
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
+            //initialise variables (totals and divider)
             float total_red = 0;
             float total_blue = 0;
             float total_green = 0;
             int divider = 0;
 
+            //for each pixel, loop through
             for (int k = -1; k < 2; k++)
             {
                 for (int l = -1; l < 2; l++)
