@@ -108,10 +108,25 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             //check if there is a pixel to the left
+            
 
-                //if there is not a pixel to the left, check above
+                //if there is not a pixel to the left, check above and below it.
 
-            //check if there is a pixel in top right
+                    //if there is a pixel above or below, it's an edge.
+
+                    //if there is not a pixel above or below, it's a corner.
+
+            //check if there is a pixel to the right
+
+                //if there is not a pixel to the left, check above and below it.
+
+                    //if there is a pixel above or below, it's an edge.
+
+                    //if there is not a pixel above or below, it's a corner.
+
+            //otherwise it's a regular one.
+
+
 
                 //if there is a pixel in the top right, add the values of the pixel and the one below to calculation. Add 2 to "divider" variable.
 
