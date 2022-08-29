@@ -107,9 +107,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            //check if there is a pixel in top left
+            //check if there is a pixel to the left
 
-                //if there is a pixel in the top left, add the values of the pixel and the one to the right to calculation.  Add 2 to "divider" variable.
+                //if there is not a pixel to the left, check above
 
             //check if there is a pixel in top right
 
