@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     //output file name (array of 8 (3 chars + .jpg + \0))
     char filename[8];
 
-    while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
+    while (fread(&buffer, 512, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
 
 
