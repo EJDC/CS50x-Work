@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     while (fread(&buffer, 512, 1, file) == 1)
     {
           // If not the first photo
-            if (counter > 0)
+            if (counter < 0)
             {
                 // Close the output file
                 fclose(output_file);
