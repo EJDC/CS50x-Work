@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
             //closes the previous output file if this isn't the first jpeg (ie the counter's not at zero)
             if (!(counter == 0))
             {
-                    fclose(output_file);
+                fclose(output_file);
             }
 
             //make filename (3 digit integer) of counter
@@ -52,14 +52,13 @@ int main(int argc, char *argv[])
             //iterate counter of number of image found
             counter++;
 
-         }
+        }
 
-        //if the counter isn't at zero, write the file.
-    if (!(counter == 0))
- {
-             fwrite(&buffer, 512, 1, output_file);
-
-     }
+        //if the counter isn't at zero (ie there's an image there), write the file.
+        if (!(counter == 0))
+        {
+            fwrite(&buffer, 512, 1, output_file);
+        }
 
     }
 
