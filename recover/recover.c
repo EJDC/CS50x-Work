@@ -46,7 +46,6 @@ int main(int argc, char *argv[])
                 fclose(output_file);
             }
 
-
             //make filename (3 digit integer) of counter
             sprintf(filename, "%03i.jpg", counter);
 
