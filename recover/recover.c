@@ -48,8 +48,12 @@ int main(int argc, char *argv[])
 
             counter++;
       }
-        
 
+            if (!(count == 0))
+            {
+                fwrite(&buffer, 512, 1, f);
+            }
+        }
         //Check if output have been used for valid input
     //    if (output_file != NULL)
     //    {
