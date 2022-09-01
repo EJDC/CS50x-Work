@@ -49,9 +49,9 @@ int main(int argc, char *argv[])
             counter++;
       }
 
-            if (!(count == 0))
+            if (!(counter == 0))
             {
-                fwrite(&buffer, 512, 1, f);
+                fwrite(&buffer, 512, 1, our);
             }
         }
         //Check if output have been used for valid input
