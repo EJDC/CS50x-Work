@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
             //open Out_file for writing
             output_file = fopen(filename, "w");
 
-          //  fwrite(buffer, 512, 1, output_file);
+            fwrite(buffer, 512, 1, output_file);
             //count number of image found
 
             counter++;
@@ -51,15 +51,15 @@ int main(int argc, char *argv[])
         }
 
         //Check if output have been used for valid input
-        if (output_file != NULL)
-        {
-            fwrite(buffer, 1, 512, output_file);
-        }
+    //    if (output_file != NULL)
+    //    {
+    //        fwrite(buffer, 1, 512, output_file);
+    //    }
 
-    }
+   // }
 
     fclose(output_file);
-    fclose(input_file);
+    fclose(file);
 
     return 0;
 }
