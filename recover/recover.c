@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
     //output file name (array of 8 (3 chars + .jpg + \0))
     char filename[8];
 
+    //repeat until end of card
     while (fread(buffer, 1, 512, raw_file) == 512)
     {
     //if first bytes are a jpeg header
