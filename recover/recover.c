@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     //usage check - 1 command argument
     if (argc != 2)
     {
-        printf("Usage:  ./recover file.raw")
+        printf("Usage:  ./recover file.raw\n")
         return 1;
     }
 
@@ -21,18 +21,14 @@ int main(int argc, char *argv[])
     }
 
     //variables
-
-
     //buffer of 512 bytes
     BYTE buffer[512];
     //counter for number of images found
     int counter = 0;
     //output file
     FILE *output_file = NULL;
-    //output file name
-    char
-
-
+    //output file name (array of 8 (3 chars + .jpg + \0))
+    char filename[8];
 
     while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
