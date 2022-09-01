@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 typedef uint8_t BYTE;
 
@@ -8,7 +9,7 @@ int main(int argc, char *argv[])
     //usage check - 1 command argument
     if (argc != 2)
     {
-        printf("Usage:  ./recover file.raw\n")
+        printf("Usage:  ./recover file.raw\n");
         return 1;
     }
 
@@ -16,7 +17,7 @@ int main(int argc, char *argv[])
     FILE *file = fopen(argv[1], "r");
     if (!file)
     {
-        printf("File not found")
+        printf("File not found");
         return 1;
     }
 
@@ -48,6 +49,7 @@ int main(int argc, char *argv[])
             counter++;
       }
         }
+
         //Check if output have been used for valid input
         if (output_file != NULL)
         {
@@ -55,4 +57,3 @@ int main(int argc, char *argv[])
         }
 
     }
-    
