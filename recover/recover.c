@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 
             counter++;
       }
-        }
+        
 
         //Check if output have been used for valid input
     //    if (output_file != NULL)
