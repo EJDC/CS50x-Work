@@ -59,11 +59,12 @@ int main(int argc, char *argv[])
         if (!(counter == 0))
         {
                 fwrite(&buffer, 512, 1, output_file);
+
         }
     }
 
-    fclose(output_file);
     fclose(file);
+    fclose(output_file);
 
     return 0;
 }
