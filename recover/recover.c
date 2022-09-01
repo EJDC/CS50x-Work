@@ -22,8 +22,17 @@ int main(int argc, char *argv[])
 
     //variables
 
-    buffer[512];
-    
+
+    //buffer of 512 bytes
+    BYTE buffer[512];
+    //counter for number of images found
+    int counter = 0;
+    //output file
+    FILE *output_file = NULL;
+    //output file name
+    char
+
+
 
     while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
