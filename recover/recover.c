@@ -22,7 +22,8 @@ int main(int argc, char *argv[])
 
     //variables
 
-    buffer
+    buffer[512];
+    
 
     while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
