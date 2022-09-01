@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     fread(bytes, sizeof(BYTE), 3, file);
 
     // Check first three bytes
-    if (bytes[0] == 0xff && bytes[1] == 0xd8 && bytes[2] == 0xff)
+    if (bytes[0] == 0xff && bytes[1] == 0xd8 && bytes[2] == 0xff && bytes[3]
     {
         printf("Yes, possibly\n");
     }
