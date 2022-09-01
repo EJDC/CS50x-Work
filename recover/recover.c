@@ -35,43 +35,24 @@ int main(int argc, char *argv[])
     {
     //if first bytes are a jpeg header
     if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
-    {
-
-            //print filename (3 digit integer) of counter
+     {
+            //make filename (3 digit integer) of counter
             sprintf(filename, "%03i.jpg", counter);
 
             //open Out_file for writing
             output_file = fopen(filename, "w");
 
-            fwrite(buffer, sizeof(buffer), 1, output_file);
+            fwrite(buffer, 512, 1, output_file);
             //count number of image found
-            count_image++;
 
-    }
+            counter++;
+      }
         }
         //Check if output have been used for valid input
         if (output_file != NULL)
         {
-            fwrite(buffer, sizeof(char), 512, output_file);
+            fwrite(buffer, 1, 512, output_file);
         }
 
     }
-    }
-
-    // Read first three bytes
-    BYTE bytes[3];
-    fread(bytes, sizeof(BYTE), 3, file);
-
-    // Check first three bytes
-    if (bytes[0] == 0xff && bytes[1] == 0xd8 && bytes[2] == 0xff && bytes[3] (buffer[3] & 0xf0) == 0xe0)
-    {
-        printf("Yes, possibly\n");
-    }
-    else
-    {
-        printf("No\n");
-    }
-
-
-
-}
+    
