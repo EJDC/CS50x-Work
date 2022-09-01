@@ -31,10 +31,9 @@ int main(int argc, char *argv[])
     //output file name (array of 8 (3 chars + .jpg + \0))
     char filename[8];
 
-    //repeat until end of card
+    //repeat until end of data
     while (fread(&buffer, 512, 1, file) == 1)
     {
-
         //if first bytes are a jpeg header
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
@@ -55,7 +54,7 @@ int main(int argc, char *argv[])
         }
 
     }
-    
+
     fclose(file);
     fclose(output_file);
 
