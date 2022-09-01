@@ -52,16 +52,14 @@ int main(int argc, char *argv[])
             //iterate counter of number of image found
             counter++;
 
-            fwrite(&buffer, 512, 1, output_file);
-
          }
 
         //if the counter isn't at zero, write the file.
-    //    if (!(counter == 0))
-      //  {
-       //         fwrite(&buffer, 512, 1, output_file);
+    if (!(counter == 0))
+ {
+             fwrite(&buffer, 512, 1, output_file);
 
-        // }
+     }
 
     }
 
