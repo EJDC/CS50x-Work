@@ -29,21 +29,22 @@ int main(int argc, char *argv[])
     //output file
     FILE *output_file = NULL;
     //output file name (array of 8 (3 chars + .jpg + \0))
-    char *filename[8];
+    char filename[8];
 
     //repeat until end of card
     while (fread(&buffer, 512, 1, file) == 1)
     {
-          // If not the first photo
+
+        //if first bytes are a jpeg header
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        {
+
+            // If not the first photo
             if (counter < 0)
             {
                 // Close the output file
                 fclose(output_file);
             }
-
-        //if first bytes are a jpeg header
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
-        {
 
 
             //make filename (3 digit integer) of counter
