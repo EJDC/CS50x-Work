@@ -55,6 +55,7 @@ int main(int argc, char *argv[])
         }
 
     }
+    
     fclose(file);
     fclose(output_file);
 
