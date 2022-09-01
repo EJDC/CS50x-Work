@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
             //make filename (3 digit integer) of counter
             sprintf(filename, "%03i.jpg", counter);
 
-            //open Out_file for writing
+            //open output file for writing
             output_file = fopen(filename, "w");
 
             //iterate counter of number of image found
