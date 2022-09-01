@@ -37,6 +37,12 @@ int main(int argc, char *argv[])
         //if first bytes are a jpeg header
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
+            //closes 
+            if (!(counter == 0))
+            {
+                    fclose(output_file);
+            }
+
             //make filename (3 digit integer) of counter
             sprintf(filename, "%03i.jpg", counter);
 
