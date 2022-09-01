@@ -34,33 +34,24 @@ int main(int argc, char *argv[])
     //repeat until end of card
     while (fread(&buffer, 512, 1, file) == 1)
     {
-    //if first bytes are a jpeg header
-    if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
-     {
+        //if first bytes are a jpeg header
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        {
             //make filename (3 digit integer) of counter
             sprintf(filename, "%03i.jpg", counter);
 
             //open Out_file for writing
             output_file = fopen(filename, "w");
 
-            //fwrite(buffer, 512, 1, output_file);
-            //count number of image found
-
+            //iterate counter of number of image found
             counter++;
-      }
+         }
 
-            if (!(counter == 0))
-            {
+        if (!(counter == 0))
+        {
                 fwrite(&buffer, 512, 1, output_file);
-            }
         }
-        //Check if output have been used for valid input
-    //    if (output_file != NULL)
-    //    {
-    //        fwrite(buffer, 1, 512, output_file);
-    //    }
-
-   // }
+    }
 
     fclose(output_file);
     fclose(file);
