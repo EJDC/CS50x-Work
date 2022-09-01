@@ -20,6 +20,12 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
+{
+
+
+}
+
     // Read first three bytes
     BYTE bytes[3];
     fread(bytes, sizeof(BYTE), 3, file);
