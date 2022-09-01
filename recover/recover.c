@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     //output file
     FILE *output_file = NULL;
     //output file name (array of 8 (3 chars + .jpg + \0))
-    char filename = 8;
+    char filename[8];
 
     //repeat until end of card
     while (fread(&buffer, 512, 1, file) == 1)
@@ -62,7 +62,6 @@ int main(int argc, char *argv[])
         }
     }
 
-free(filename);
     fclose(output_file);
     fclose(file);
 
