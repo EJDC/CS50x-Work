@@ -28,6 +28,14 @@ int wordcount = 0;
 bool check(const char *word)
 {
     // TODO
+    //defines a variable hashval which calls the hash function on the  word, resulting in an integer hash value
+    int hashval = hash(word);
+
+    //access the linked list of nodes at the hashval
+    node *n = table[hashval]
+
+    //go through the nodes in the linked list to look for the word.
+
     return false;
 }
 
