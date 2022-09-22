@@ -37,12 +37,12 @@ bool check(const char *word)
     //go through the nodes in the linked list to look for the word.
     while (x != NULL)
     {
-        if (strcasecmp(word, n->word) == 0)
+        if (strcasecmp(word, x->word) == 0)
         {
             return true;
         }
 
-        n = n->next;
+        x = x->next;
     }
     return false;
 }
