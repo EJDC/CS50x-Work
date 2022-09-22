@@ -35,6 +35,16 @@ bool check(const char *word)
     node *n = table[hashval]
 
     //go through the nodes in the linked list to look for the word.
+    while (n != NULL)
+    {
+        if (strcasecmp(word, n->word) == 0)
+        {
+            return true;
+        }
+        n = n->next;
+    }
+return false;
+}
 
     return false;
 }
