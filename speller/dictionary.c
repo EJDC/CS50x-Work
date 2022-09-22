@@ -52,7 +52,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    //create array of characters for new word
+    //create array of characters for new word [of size maxworthlenghth as defined in other file +1 for the old /0]
     char newWord[LENGTH + 1];
 
     //loop to read strings (%s) from the file (dictfile) and store in array (word) until the end of the file.
