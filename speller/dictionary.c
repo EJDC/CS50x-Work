@@ -73,7 +73,7 @@ bool load(const char *dictionary)
         //defines a variable hashval which calls the hash function on the new word, resulting in an integer hash value
         int hashval = hash(newWord);
 
-        //point new node to beginning of linked list.
+        //point new node to beginning of linked list, which is the hashval which we stated above.
         newNode->next = table[hashval];
 
         //insert node at (hashval) location in hash table
