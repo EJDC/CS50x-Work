@@ -70,7 +70,7 @@ bool load(const char *dictionary)
         //copy new word into the new node with a string copy.
         strcpy(newNode->word, newWord);
 
-        //call hash function on the new word to get it's hash value
+        //defines a variable hashval which calls the hash function on the new word, resulting in an integer hash value
         int hashval = hash(newWord);
 
         //point new node to beginning of linked list.
