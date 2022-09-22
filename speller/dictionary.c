@@ -28,10 +28,10 @@ int wordcount = 0;
 bool check(const char *word)
 {
     // TODO
-    //defines a variable hashval which calls the hash function on the  word, resulting in an integer hash value
+    //defines a variable hashval which calls the hash function on the  word, resulting in an integer hash value which would be the start of the linked list.
     int hashval = hash(word);
 
-    //access the linked list of nodes at the hashval
+    //access the linked list of nodes at the hashval (ie start of list)
     node *n = table[hashval]
 
     //go through the nodes in the linked list to look for the word.
@@ -41,9 +41,10 @@ bool check(const char *word)
         {
             return true;
         }
+        
         n = n->next;
     }
-return false;
+    return false;
 }
 
 // Hashes word to a number
