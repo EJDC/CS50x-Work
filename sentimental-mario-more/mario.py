@@ -6,7 +6,6 @@ def main():
         for j in range(height):
             print("#", end="")
 
-
 def get_height():
     while True:
         try:
