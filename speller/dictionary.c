@@ -6,6 +6,7 @@
 #include "dictionary.h"
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 
 // Represents a node in a hash table
 typedef struct node
@@ -46,7 +47,7 @@ bool check(const char *word)
         //if not, head to next node.
         x = x->next;
     }
-    
+
     return false;
 }
 
@@ -119,5 +120,19 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    return false;
+    //go through every bucket in the hash table (N)
+    for (int i = 0; i < N; i++)
+        //while the hash table still exists
+        while (table[i] != NULL)
+        {
+            //create a temporary node which is just a pointer to the next node in the hash table.
+            node *temp = table[i] ->next;
+            //free the memory of the node we just copied.
+            free(table[i]);
+            //put temporary node into the table.
+            table[i] = temp;
+        }
+    return true;
 }
+
+
