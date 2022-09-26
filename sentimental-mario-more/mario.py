@@ -4,7 +4,7 @@ def main():
     for i in range(height):
         print(" ",end="")
         for j in range(height):
-            print("#")
+            print("#", end="")
 
 
 def get_height():
