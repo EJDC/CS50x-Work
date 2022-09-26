@@ -2,4 +2,4 @@
 
 print("What is your name?")
 n = input()
-print(input)
+print("hello " + n)
