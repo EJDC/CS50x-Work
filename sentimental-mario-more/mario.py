@@ -18,3 +18,4 @@ def get_height():
     return n
 
 main()
+
