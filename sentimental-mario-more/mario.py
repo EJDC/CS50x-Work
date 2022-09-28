@@ -7,6 +7,7 @@ def main():
         print("#" * (i + 1), end="")
         print()
 
+
 def get_height():
     while True:
         try:
@@ -16,5 +17,6 @@ def get_height():
         except ValueError:
             print("That's not an integer!")
     return n
+
 
 main()
