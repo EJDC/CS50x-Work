@@ -66,8 +66,10 @@ def simulate_tournament(teams):
     # TODO
     #loop through the teams until there's only one left
     while len(teams) > 1:
-        #change teams to simulate round of the the list of teams
+        #use simulate round function on the teams input, to get teams down to one
         teams = simulate_round(teams)
+    #as there is only one team left (at spot 0 in the list), return it's name
+    return teams [0]["team"]
 
 
 if __name__ == "__main__":
