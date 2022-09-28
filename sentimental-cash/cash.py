@@ -1,6 +1,6 @@
 # TODO
 def main():
-    cents = get_cents
+    cents = get_cents()
     print(cents)
 
 
