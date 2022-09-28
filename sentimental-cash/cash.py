@@ -8,6 +8,6 @@ def get_cents():
     while True:
         n = float(input("No. of Cents:"))
         if n > 0:
-             break
+             return n
 
 main()
