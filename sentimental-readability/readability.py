@@ -30,6 +30,6 @@ while True:
     elif calc > 16:
         print ("Grade 16+")
     else:
-        print ("Grade " + calc)
+        print (f"Grade {calc}")
 
     break
