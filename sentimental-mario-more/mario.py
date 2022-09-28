@@ -2,9 +2,14 @@
 def main():
     height = get_height()
     for i in range(height):
-        print(" ",end="")
-    for j in range(height):
-        print("#", end="")
+        for j in range(height):
+            print(" ", end="")
+        for k in range(height):
+            print("#", end="")
+        print("  ", end="")
+        for m in range(height):
+            print("#", end="")
+        print()
 
 def get_height():
     while True:
