@@ -16,6 +16,15 @@ def main():
 
     teams = []
     # TODO: Read teams into memory from file
+    # filename is the 2nd command line argument
+    filename = sys.argv[1]
+    # open filename and call it f
+    with open(filename) as f:
+        #use dictreader function to read f
+        reader = csv.DictReader(f)
+        for team in reader:
+
+
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
