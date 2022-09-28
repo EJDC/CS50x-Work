@@ -1,7 +1,7 @@
 # TODO
 def main():
     cents = get_cents()
-    cents = round(int(cents *100))
+    cents = round(int(cents * 100))
     coins = 0
     while cents > 0:
         if cents >= 25:
@@ -16,7 +16,6 @@ def main():
         elif cents >= 1:
             cents = cents - 1
             coins = coins + 1
-
     print(coins)
 
 
@@ -29,5 +28,6 @@ def get_cents():
         except ValueError:
             print("That's not a valid number!")
     return n
+    
 
 main()
