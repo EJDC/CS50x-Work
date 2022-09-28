@@ -1,11 +1,10 @@
-# TODO
 def main():
     height = get_height()
     for i in range(height):
         print(" " * (height - i), end="")
-        print("#" * i, end="")
+        print("#" * (i + 1), end="")
         print("  ", end="")
-        print("#", end="")
+        print("#" * (i + 1), end="")
         print()
 
 def get_height():
