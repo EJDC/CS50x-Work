@@ -20,26 +20,24 @@ def main():
     filename = sys.argv[1]
     # open filename and call it f
     with open(filename) as f:
-        #use dictreader function to read f
+        # use dictreader function to read f
         reader = csv.DictReader(f)
-        #loop through each row team
+        # loop through each row team
         for team in reader:
-            #cast the rating of the team into an integer
+            # cast the rating of the team into an integer
             team["rating"] = int(team["rating"])
-            #append the csv
+            # append the csv
             teams.append(team)
-
-
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
     # loop N times
     for i in range(N):
-        #simulate tournament of teams and store winner
+        # simulate tournament of teams and store winner
         winner = simulate_tournament(teams)
-        #if winner already in counts, add one, otherwise set it to one.
+        # if winner already in counts, add one, otherwise set it to one.
         if winner in counts:
-            counts[winner] +=1
+            counts[winner] += 1
         else:
             counts[winner] = 1
 
@@ -73,12 +71,12 @@ def simulate_round(teams):
 def simulate_tournament(teams):
     """Simulate a tournament. Return name of winning team."""
     # TODO
-    #loop through the teams until there's only one left
+    # loop through the teams until there's only one left
     while len(teams) > 1:
-        #use simulate round function on the teams input, to get teams down to one
+        # use simulate round function on the teams input, to get teams down to one
         teams = simulate_round(teams)
-    #as there is only one team left (at spot 0 in the list), return it's name
-    return teams [0]["team"]
+    # as there is only one team left (at spot 0 in the list), return it's name
+    return teams[0]["team"]
 
 
 if __name__ == "__main__":
