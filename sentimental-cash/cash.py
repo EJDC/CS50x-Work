@@ -6,8 +6,9 @@ def main():
 
 def get_cents():
     while True:
-        n = float(input("No. of Cents:"))
-        if n > 0:
-             return n
+        try:
+            n = float(input("No. of Cents:"))
+            if n > 0:
+                
 
 main()
