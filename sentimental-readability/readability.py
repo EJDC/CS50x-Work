@@ -9,7 +9,7 @@ def get_string():
     while True:
         try:
             n = str(input("Text: "))
-            if len(str) > 1:
+            if len(n) > 1:
                 break
         except ValueError:
             print("That's not a valid number!")
