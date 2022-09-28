@@ -23,11 +23,8 @@ while True:
             sentences +=1
 
     #Coleman-Liau calculation
-    averageletters = (letters / words) * 100
-    averagesentences = (sentences / words) * 100
-    calc = 0.588 * averageletters - 0.296 * averagesentences - 15.8
+    calc = (0.0588 * letters / words *100) - (0.296 * sentences / words *100) - 15.8
     calcround = round(calc)
-
     print(calcround)
 
     if calcround < 1:
