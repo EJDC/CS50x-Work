@@ -1,7 +1,10 @@
 # TODO
 
 while True:
-
-    n = str(input("Text: "))
+    text = str(input("Text: "))
+    length = len(text)
+    letters = 0
+    words = 1
+    sentences = 0
 
 
