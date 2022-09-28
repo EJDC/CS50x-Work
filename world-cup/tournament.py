@@ -22,7 +22,12 @@ def main():
     with open(filename) as f:
         #use dictreader function to read f
         reader = csv.DictReader(f)
+        #loop through each row team
         for team in reader:
+            #cast the rating of the team into an integer
+            team["rating"] = int(team["rating"])
+            
+            teams.append(team)
 
 
 
