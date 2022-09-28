@@ -1,18 +1,8 @@
 # TODO
 
-def main():
-    word = get_string()
-    print(word)
+while True:
 
+    n = str(input("Text: "))
 
-def get_string():
-    while True:
-        try:
-            n = str(input("Text: "))
-            if len(n) > 1:
-                break
-        except ValueError:
-            print("That's not a valid number!")
-    return n
 
 main()
