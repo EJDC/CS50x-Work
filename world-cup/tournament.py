@@ -26,7 +26,7 @@ def main():
         for team in reader:
             #cast the rating of the team into an integer
             team["rating"] = int(team["rating"])
-            
+            #append the csv
             teams.append(team)
 
 
