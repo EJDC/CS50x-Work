@@ -23,11 +23,14 @@ while True:
             sentences +=1
 
     #Coleman-Liau calculation
-    calc = round(((0.588 * letters/words *100) - (0.296 * sentences/words *100) - 15.8))
+    calc = (0.588 * letters/words *100) - (0.296 * sentences/words *100) - 15.8
+    calcround = round(calc)
 
-    if calc < 1:
+    if calcround < 1:
         print ("Before Grade 1")
-    elif calc > 16:
+    elif calcround > 16:
         print ("Grade 16+")
     else:
         print ("Grade " + calc)
+
+    break
