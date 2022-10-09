@@ -1,11 +1,11 @@
 import csv
-import sys
+from sys import sys
 
 
 def main():
 
     # TODO: Check for command-line usage
-    if argv != 2:
+    if len(argv) != 3:
         print('Usage python dna.py data.csv')
 
     # TODO: Read database file into a variable
