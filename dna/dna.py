@@ -21,6 +21,7 @@ def main():
         #print(seqeunce)
 
     # TODO: Find longest match of each STR in DNA sequence
+    
     matches = []
     for i in range(1, len(database[0])):
         matches.append(longest_match(seqeunce, database[0][i]))
