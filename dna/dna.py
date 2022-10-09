@@ -23,9 +23,29 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
     matches = []
     for i in range(1, len(database[0])):
-        matches.append(longest_match(sequence, database[0][i]))
+        matches.append(longest_match(seqeunce, database[0][i]))
 
     # TODO: Check database for matching profiles
+
+    suspect = 'No Match'
+    suspect_counter = 0
+
+    for i in range(1, len(database)):
+        for j in range(len(matches)):
+            #special note, the database is all strings, so int() is required to
+            #convert from string to int
+            if matches[j] == int(database[i][j+1]):
+                suspect_counter += 1
+
+        if suspect_counter == len(matches):
+            # We've got the suspect!  No need to continue.
+            suspect = database[i][0]
+            break
+        else:
+            suspect_counter = 0
+    print(suspect)
+
+    return
 
     return
 
