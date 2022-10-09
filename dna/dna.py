@@ -13,6 +13,7 @@ def main():
     with open(argv[1], "r") as db:
         reader = csv.reader(db)
         database = list(reader)
+        print(reader)
 
     # TODO: Read DNA sequence file into a variable
 
