@@ -13,6 +13,7 @@ typedef struct person
 }
 person;
 
+
 const int GENERATIONS = 3;
 const int INDENT_LENGTH = 4;
 
