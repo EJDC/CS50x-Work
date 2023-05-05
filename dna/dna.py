@@ -43,7 +43,7 @@ def main():
             break
         else:
             suspect_counter = 0
-    print(suspect + "Charlie")
+    print(suspect)
 
     return
 
