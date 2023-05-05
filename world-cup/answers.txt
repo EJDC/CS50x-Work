@@ -9,7 +9,7 @@ Times:
 
 Which predictions, if any, proved incorrect as you increased the number of simulations?:
 
-With a small number of simulations...
+With a small number of simulations second place was achieved by a variety of countries, however, when increased Brazil became clear second every time.
 
 Suppose you're charged a fee for each second of compute time your program uses.
 After how many simulations would you call the predictions "good enough"?:
