@@ -16,11 +16,11 @@ WHERE year = 2021
 SELECT * FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28;
 SELECT * FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
 
-SELECT DISTINCT name, phone_number, passport_number, license_plate, amount
+SELECT  name, phone_number, passport_number, license_plate, amount
 FROM atm_transactions
 JOIN bank_accounts ON bank_accounts.account_number = atm_transactions.account_number
 JOIN people ON bank_accounts.person_id = people.id
-JOIN phone_calls ON people.phone_number = phone_calls.caller
+JOIN phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60 ON people.phone_number = phone_calls.caller
 WHERE atm_transactions.year = 2021
   AND atm_transactions.month = 7
   AND atm_transactions.day = 28
