@@ -1,3 +1,4 @@
-SELECT title FROM movies,
-JOIN movies ON ratings.movie_id = movies.id
-AND rating FROM ratings ORDER BY rating;
+SELECT title, rating
+FROM movies
+JOIN ratings ON ratings.movie_id = movies.id
+ORDER BY rating DESC;
