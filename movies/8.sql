@@ -1,2 +1,4 @@
 SELECT name FROM people
-JOIN people ON people.movie_id = movies.id
+JOIN people ON stars.person_id = people.id
+JOIN movies ON stars.movie_id = movie.id
+WHERE movies.name = 'Toy Story'
