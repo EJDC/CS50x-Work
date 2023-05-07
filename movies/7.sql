@@ -1,1 +1,1 @@
-SELECT title, rating ORDER BY rating
+SELECT title FROM movies AND rating FROM ratings ORDER BY rating
