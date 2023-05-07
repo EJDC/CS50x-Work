@@ -14,3 +14,5 @@ WHERE year = 2021
   AND transaction_type = 'withdraw';
 
 SELECT * FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28;
+SELECT * FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
+
