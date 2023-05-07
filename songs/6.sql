@@ -1,2 +1,3 @@
-SELECT name from SONGS
-JOIN artist_id
+SELECT * from SONGS
+JOIN ARTISTS on artists.artist_id
+WHERE name = 'Post Malone';
