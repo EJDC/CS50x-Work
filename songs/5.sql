@@ -1,1 +1,1 @@
-SELECT COUNT (AVG energy) from SONGS;
+SELECT AVG(`energy`) FROM SONGS;
