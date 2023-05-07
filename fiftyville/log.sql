@@ -20,6 +20,7 @@ SELECT name, phone_number, passport_number, license_plate
 FROM atm_transactions
 JOIN bank_accounts ON bank_accounts.account_number = atm_transactions.account_number
 JOIN people ON bank_accounts.person_id = people.id
+JOIN phone_calls ON bank_accounts.phone_numbers = phone_calls.caller
 WHERE year = 2021
   AND month = 7
   AND day = 28
