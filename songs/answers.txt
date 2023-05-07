@@ -8,18 +8,6 @@ If songs.db contains the top 100 songs of one listener from 2018, how would you 
 Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
 Be sure to submit answers.txt along with each of your .sql files!
 
-If songs.db contains the top 100 songs of one listener from 2018, their audio aura could be characterized as follows:
-
-Limited sample size: Only looking at the top 100 songs of one listener from one year may not provide a complete picture of their music taste. They may have a wider range of preferences that are not reflected in their top 100 songs.
-Variety of moods: The listener's top 100 songs may include a mix of songs that express different moods and emotions. Averaging these songs may not accurately capture the listener's two most prominent moods.
-Genre bias: The listener's top 100 songs may be biased towards a specific genre or artist, which may skew the average values of energy, valence, and danceability.
-
-To address these limitations, a better way of calculating a listener's audio aura could include:
-
-Increasing the sample size: Looking at a larger sample of songs from multiple years could provide a more complete picture of the listener's music taste.
-
-Including more mood indicators: Using more indicators, such as tempo or acousticness, could capture a wider range of moods and emotions expressed in the listener's music taste.
-
-Genre normalization: Normalizing the data based on genre could provide a more accurate representation of the listener's music taste, accounting for any genre biases in their top 100 songs.
-
-Overall, while the current method of characterizing a listener's audio aura may provide some insights, it is limited in its scope and may not accurately capture the listener's music taste. By incorporating a larger sample size, more mood indicators, and genre normalization, a more accurate representation of a listener's audio aura could be obtained.
+-- Only looking at the top 100 songs of one listener from one year may not provide a complete picture of their music taste.
+-- Variety of moods: The listener's top 100 songs may include a mix of songs that express different moods and emotions.
+-- The listener's top 100 songs may be biased towards a specific genre or artist, which may skew the average values of energy, valence, and danceability.
