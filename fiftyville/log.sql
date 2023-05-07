@@ -70,6 +70,7 @@ WHERE atm_transactions.year = 2021
   AND atm_location = 'Leggett Street'
   AND transaction_type = 'withdraw'
   AND duration < 60;
+  AND origin_airport = 'Fiftyville Regional Airport'
 
 
 
