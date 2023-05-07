@@ -1,1 +1,1 @@
-SELECT name from SONGS WHERE 
+SELECT name from SONGS WHERE artist_id 
