@@ -21,9 +21,9 @@ FROM atm_transactions
 JOIN bank_accounts ON bank_accounts.account_number = atm_transactions.account_number
 JOIN people ON bank_accounts.person_id = people.id
 JOIN phone_calls ON bank_accounts.phone_numbers = phone_calls.caller
-WHERE year = 2021
-  AND month = 7
-  AND day = 28
+WHERE atm_transactions.year = 2021
+  AND atm_transactions.month = 7
+  AND atm_transactions.day = 28
   AND atm_location = 'Leggett Street'
   AND transaction_type = 'withdraw';
 
