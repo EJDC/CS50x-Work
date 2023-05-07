@@ -1,3 +1,3 @@
 SELECT songs.name from SONGS
 JOIN ARTISTS ON artists.id = songs.artist_id
-WHERE artists.name LIKE '%feat.%';
+WHERE LOWER(artists.name) LIKE '%feat.%';
