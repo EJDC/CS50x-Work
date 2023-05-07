@@ -16,3 +16,14 @@ WHERE year = 2021
 SELECT * FROM bakery_security_logs WHERE year = 2021 AND month = 7 AND day = 28;
 SELECT * FROM phone_calls WHERE year = 2021 AND month = 7 AND day = 28 AND duration < 60;
 
+SELECT name, phone_number, passport_number, license_plate
+FROM atm_transactions
+JOIN bank_accounts ON bank_accounts.account_number = atm_transactions.account_number
+JOIN people ON bank_accounts.person_id = people.id
+WHERE year = 2021
+  AND month = 7
+  AND day = 28
+  AND atm_location = 'Leggett Street'
+  AND transaction_type = 'withdraw';
+
+
