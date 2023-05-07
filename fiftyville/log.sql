@@ -39,12 +39,13 @@ WHERE atm_transactions.year = 2021
   AND transaction_type = 'withdraw'
   AND duration < 60;
 
-SELECT  name, phone_number, passengers.passport_number, license_plate, amount
+SELECT  name, phone_number, license_plate, amount, origin_airport_id, destination_airport_id
 FROM atm_transactions
 JOIN bank_accounts ON bank_accounts.account_number = atm_transactions.account_number
 JOIN people ON bank_accounts.person_id = people.id
 JOIN phone_calls ON people.phone_number = phone_calls.caller
 JOIN passengers ON people.passport_number = passengers.passport_number
+JOIN flights ON passengers.flight_id = flights.id
 WHERE atm_transactions.year = 2021
   AND atm_transactions.month = 7
   AND atm_transactions.day = 28
