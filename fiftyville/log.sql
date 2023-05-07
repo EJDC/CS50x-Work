@@ -39,5 +39,18 @@ WHERE atm_transactions.year = 2021
   AND transaction_type = 'withdraw'
   AND duration < 60;
 
+SELECT  name, phone_number, passengers.passport_number, license_plate, amount
+FROM atm_transactions
+JOIN bank_accounts ON bank_accounts.account_number = atm_transactions.account_number
+JOIN people ON bank_accounts.person_id = people.id
+JOIN phone_calls ON people.phone_number = phone_calls.caller
+JOIN passengers ON people.passport_number = passengers.passport_number
+WHERE atm_transactions.year = 2021
+  AND atm_transactions.month = 7
+  AND atm_transactions.day = 28
+  AND atm_location = 'Leggett Street'
+  AND transaction_type = 'withdraw'
+  AND duration < 60;
+
 
 
