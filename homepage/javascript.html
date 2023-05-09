@@ -40,5 +40,28 @@
         </div>
     </div>
 </nav>
+<div class="container">
+    <main>
+        <h3>Javascript Feature</h3>
+        <p>Must integrate one or more:</p>
+        <ol>
+            <li>
+                Background Changer!
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary" onclick="changeColor('blue')">Blue</button>
+                    <button type="button" class="btn btn-secondary" onclick="changeColor('red')">Red</button>
+                    <button type="button" class="btn btn-success" onclick="changeColor('green')">Green</button>
+                    <button type="button" class="btn btn-danger" onclick="changeColor('yellow')">Yellow</button>
+                    <button type="button" class="btn btn-warning" onclick="changeColor('orange')">Orange</button>
+                </div>
+            </li>
+            </ul>
+    </main>
+</div>
+<script>
+    function changeColor(color) {
+        document.body.style.backgroundColor = color;
+    }
+</script>
 
 </html>
