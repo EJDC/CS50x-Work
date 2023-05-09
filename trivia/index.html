@@ -19,7 +19,12 @@
 
                 //Change colour to red when a wrong answer is selected.
                 let wrongAnswers = document.querySelectorAll('.wrong');
-                
+                for (let i = 0; i < wrongAnswers.length; i++) {
+                    wrongAnswers[i].addEventListener('click', function() {
+                        wrongAnswers[i].style.backgroundColor = 'red'
+                        document.querySelector('.response1').innerHTML = "WRONG!";
+                    })
+                }
 
             })
         </script>
