@@ -5,12 +5,13 @@ header {
 
 main {
     margin: 2vh;
-    color: blue;
 }
 
 .speclist {
     margin-top: 1.5vh;
 }
 
-.nav-item {
-}
+.navbar-nav .active > .nav-link {
+    color: green;
+    font-weight: bold;
+  }
