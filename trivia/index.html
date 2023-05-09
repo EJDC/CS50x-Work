@@ -23,8 +23,20 @@
                     wrongAnswers[i].addEventListener('click', function() {
                         wrongAnswers[i].style.backgroundColor = 'red'
                         document.querySelector('.response1').innerHTML = "WRONG!";
-                    })
+                    });
                 }
+                //Checking second question
+                document.querySelector('.submitter').addEventListener('click', function() {
+                    let answer = document.querySelector('input')
+                    if (answer.value === 'Ben Nevis') {
+                        answer.style.backgroundColor = 'green';
+                        document.querySelector('.response2').innerHTML = "That's Right!";
+                    } else {
+                        answer.style.backgroundColor = 'red';
+                        document.querySelector('.response2').innerHTML = "WRONG!";
+                    }
+
+                })
 
             })
         </script>
@@ -54,7 +66,7 @@
                 <h3>What is the tallest mountain in Scotland</h3>
                 <input>
                 <button class="submitter">Submit</button>
-                <p class="response1"></p>
+                <p class="response2"></p>
 
             </div>
         </div>
