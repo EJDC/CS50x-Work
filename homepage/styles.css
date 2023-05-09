@@ -1,12 +1,16 @@
 header {
     text-align: center;
-    margin-top: 2vh
+    margin-top: 2vh;
 }
 
 main {
-    margin: 2vh
+    margin: 2vh;
+    color: blue;
 }
 
 .speclist {
-    margin-top: 1.5vh
+    margin-top: 1.5vh;
+}
+
+.nav-item {
 }
