@@ -11,7 +11,11 @@ main {
     margin-top: 1.5vh;
 }
 
-.navbar-nav .active > .nav-link {
+.navbar-nav .active>.nav-link {
     color: green;
     font-weight: bold;
-  }
+}
+
+.container {
+    max-width: 1200px
+}
