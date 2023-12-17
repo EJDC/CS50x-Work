@@ -90,10 +90,11 @@ def buy():
             stock_data['name'],
             symbol,
             no_of_shares,
-            stock_data['price'],
-            stock_data['price'],
+            round(stock_data['price'],2),
+            round(stock_data['price'],2),
             datetime.now().strftime("%d-%m-%Y %H:%M:%S"),
-            total_cost
+            round(total_cost,2)
+
         )
 
         # Add transaction to history database
