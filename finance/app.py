@@ -131,6 +131,9 @@ def register():
             flash('Passwords do not match', 'error')
             return redirect(url_for('register'))
         hashed_password = generate_password_hash(password)
+        db.execute("INSERT INTO users (username, hashed_password) VALUES(%s, %s)", username, hashed_password)
+        flash('Registration successful!', 'success')
+        return redirect(url_for('login'))
 
     return apology("TODO")
 
