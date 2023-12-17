@@ -105,7 +105,7 @@ def quote():
     """If the user is trying to get a quote"""
     if request.method == 'POST':
         symbol = request.form.get('symbol')
-        price = get_stock_price(symbol)
+        price = lookup(symbol)
         if price is not None:
             # If the price is retrieved successfully, render the quoted.html template
             return render_template('quoted.html', symbol=symbol, price=price)
