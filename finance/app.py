@@ -44,15 +44,15 @@ def buy():
     """If the user is trying to buy a quote"""
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        shares = request.form.get("shares")
+        no_of_shares = request.form.get("shares")
 
         """ Ensure inputs are not blank """
-        if not symbol or not shares:
+        if not symbol or not no_of_shares:
             flash("Stock symbol and number of shares are required", "error")
             return apology("Stock symbol and number of shares are required")
 
         """ Ensure input number of shares is a positive integer """
-        if not shares.isdigit() or int(shares) <= 0:
+        if not no_of_shares.isdigit() or int(no_of_shares) <= 0:
             flash("Number of shares must be a positive integer", "error")
             return apology("Number of shares must be a positive integer")
 
@@ -65,7 +65,7 @@ def buy():
             return apology("Stock symbol does not exist")
 
         """ Calculate total cost  """
-        total_cost = stock_data.price * shares
+        total_cost = stock_data.price * no_of_shares
 
         """ Get the user's cash  """
         user_id = session["user_id"]
@@ -83,11 +83,11 @@ def buy():
 
         # Add transaction to portfolio database
         db.execute(
-            "INSERT INTO portfolios (user_id, name, symbol, shares, paid_price, current_price, date, stock_value) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            "INSERT INTO portfolios (user_id, name, symbol, no_of_shares, paid_price, current_price, date, stock_value) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
             user_id,
-            stock["name"],
+            stock_data.name,
             symbol,
-            shares,
+            no_of_shares,
             stock["price"],
             stock["price"],
             get_time(),
