@@ -52,20 +52,20 @@ def buy():
             return apology('Stock symbol and number of shares are required')
 
         """ Ensure input number of shares is a positive integer """
-       if not shares.isdigit() or int(shares) <= 0:
+        if not shares.isdigit() or int(shares) <= 0:
             flash('Number of shares must be a positive integer', 'error')
             return apology('Number of shares must be a positive integer')
 
         """ Get stock price """
-        stock_price = lookup(symbol)
+        stock_data = lookup(symbol)
 
         """ Ensure Stock Symbol exists """
-        if stock_price is None:
+        if stock_data is None:
             flash('Stock symbol does not exist', 'error')
             return apology('Stock symbol does not exist')
 
-         """ Calculate total cost  """
-        total_cost = stock_price * shares
+        """ Calculate total cost  """
+        total_cost = stock_data.price * shares
 
         user_id = session["user_id"]
 
@@ -145,10 +145,10 @@ def quote():
     """If the user is trying to get a quote"""
     if request.method == 'POST':
         symbol = request.form.get('symbol')
-        price = lookup(symbol)
-        if price is not None:
+        data = lookup(symbol)
+        if data is not None:
             # If the price is retrieved successfully, render the quoted.html template
-            return render_template('quoted.html', symbol=symbol, price=price)
+            return render_template('quoted.html', data=data)
         else:
             # Handle case where stock symbol is invalid or price retrieval fails
             return apology("Invalid symbol!")
