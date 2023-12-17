@@ -2,6 +2,7 @@ import os
 
 from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
+from birthday import Birthday
 
 # Configure application
 app = Flask(__name__)
@@ -33,10 +34,13 @@ def index():
     else:
 
         # TODO: Display the entries in the database on index.html
+
         birthdays = []
         sql ="SELECT * from birthdays"
-        results = 
+        results = run_sql(sql)
+        for result in results:
+            birthdays = Birthday
 
-        return render_template("index.html")
+        return render_template("index.html", birthdays=birthdays)
 
 
