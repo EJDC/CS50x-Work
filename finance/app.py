@@ -67,6 +67,8 @@ def buy():
          """ Calculate total cost  """
         total_cost = stock_price * shares
 
+        user_id = session["user_id"]
+
         # Check available cash (Assuming you have a function to get user's cash from the database)
         user_cash = get_user_cash()  # Replace with your function
 
