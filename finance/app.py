@@ -67,16 +67,20 @@ def buy():
         """ Calculate total cost  """
         total_cost = stock_data.price * shares
 
+        """ Get the user's cash  """
         user_id = session["user_id"]
-
         user_cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
         user_cash = user_cash[0]["cash"]
 
+        """ Check if user has enough cash for purchase  """
         if total_cost > user_cash:
             flash("Not Enough Cash!", "error")
             return apology("Not Enough Cash!")
 
         # Perform purchase (Update user's cash and record purchase in the database)
+        updated_user_cash = user_cash - total_cost
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", updated_user_cash, user_id)
+
         # Add transaction to portfolio database
         db.execute(
             "INSERT INTO portfolios (user_id, name, symbol, shares, paid_price, current_price, date, stock_value) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
