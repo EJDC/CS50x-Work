@@ -137,6 +137,7 @@ def register():
         db.execute("INSERT INTO users (username, hash) VALUES(%s, %s)", username, hash)
         flash('Registration successful!', 'success')
         return render_template("login.html")
+
     else:
 
         return render_template("register.html")
