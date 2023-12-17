@@ -65,7 +65,7 @@ def buy():
             return apology("Stock symbol does not exist")
 
         """ Calculate total cost  """
-        total_cost = stock_data['price'] * no_of_shares
+        total_cost = int(stock_data['price']) * no_of_shares
 
         """ Get the user's cash  """
         user_id = session["user_id"]
