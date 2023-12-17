@@ -52,22 +52,19 @@ def buy():
             return apology('Stock symbol and number of shares are required')
 
         """ Ensure input number of shares is a positive integer """
-        try:
-            shares = int(shares)
-            if shares <= 0:
-                raise ValueError
-        except ValueError:
+       if not shares.isdigit() or int(shares) <= 0:
             flash('Number of shares must be a positive integer', 'error')
             return apology('Number of shares must be a positive integer')
 
         """ Get stock price """
-        stock_price = get_stock_price(symbol)
+        stock_price = lookup(symbol)
 
+        """ Ensure Stock Symbol exists """
         if stock_price is None:
             flash('Stock symbol does not exist', 'error')
             return apology('Stock symbol does not exist')
 
-        # Calculate total cost
+         """ Calculate total cost  """
         total_cost = stock_price * shares
 
         # Check available cash (Assuming you have a function to get user's cash from the database)
