@@ -93,7 +93,7 @@ def buy():
             stock_data['price'],
             stock_data['price'],
             datetime.now().strftime("%d-%m-%Y %H:%M:%S"),
-            total_cost,
+            total_cost
         )
 
         # Add transaction to history database
