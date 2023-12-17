@@ -46,26 +46,26 @@ def buy():
         symbol = request.form.get('symbol')
         shares = request.form.get('shares')
 
-        # Ensure inputs are not blank
+        """ Ensure inputs are not blank """
         if not symbol or not shares:
             flash('Stock symbol and number of shares are required', 'error')
-            return redirect(url_for('buy'))
+            return apology('Stock symbol and number of shares are required')
 
-        # Ensure shares is a positive integer
+        """ Ensure input number of shares is a positive integer """
         try:
             shares = int(shares)
             if shares <= 0:
                 raise ValueError
         except ValueError:
             flash('Number of shares must be a positive integer', 'error')
-            return redirect(url_for('buy'))
+            return apology('Number of shares must be a positive integer')
 
-        # Get stock price
+        """ Get stock price """
         stock_price = get_stock_price(symbol)
 
         if stock_price is None:
             flash('Stock symbol does not exist', 'error')
-            return redirect(url_for('buy'))
+            return apology('Stock symbol does not exist')
 
         # Calculate total cost
         total_cost = stock_price * shares
