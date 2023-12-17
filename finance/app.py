@@ -132,12 +132,13 @@ def register():
             flash('Username already exists cannot register. Please login.', 'error')
             return apology("TODO")
 
+        """Hash password and save to database"""
         hash = generate_password_hash(unhashed_password)
         db.execute("INSERT INTO users (username, hash) VALUES(%s, %s)", username, hash)
         flash('Registration successful!', 'success')
         return render_template("login.html")
-
     else:
+
         return render_template("register.html")
 
 
