@@ -116,7 +116,12 @@ def register():
         """Check if username or password or confirmation don't exist"""
         if not username or not password or not confirmation:
             return apology("TODO")
-        
+        def username_exists(username):
+            result = db.execute("SELECT * FROM users WHERE username = :username", username=username)
+            return len(result) > 0
+         if username_exists(username):
+            flash('Username already exists', 'error')
+
     return apology("TODO")
 
 
