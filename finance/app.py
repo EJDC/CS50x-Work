@@ -119,9 +119,12 @@ def register():
         def username_exists(username):
             result = db.execute("SELECT * FROM users WHERE username = :username", username=username)
             return len(result) > 0
-         if username_exists(username):
+        if username_exists(username):
             flash('Username already exists', 'error')
-
+            return apology("TODO")
+        if password != confirmation:
+            flash('Passwords do not match', 'error')
+            return redirect(url_for('register'))
     return apology("TODO")
 
 
