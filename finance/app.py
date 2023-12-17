@@ -4,8 +4,10 @@ from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
+from datetime import datetime
 
-from helpers import apology, login_required, lookup, usd
+
+from helpers import apology, login_required, lookup, usd, getTime
 
 # Configure application
 app = Flask(__name__)
@@ -65,7 +67,7 @@ def buy():
             return apology("Stock symbol does not exist")
 
         """ Calculate total cost  """
-        total_cost = int(stock_data['price']) * no_of_shares
+        total_cost = stock_data['price'] * int(no_of_shares)
 
         """ Get the user's cash  """
         user_id = session["user_id"]
@@ -85,12 +87,12 @@ def buy():
         db.execute(
             "INSERT INTO portfolios (user_id, name, symbol, no_of_shares, paid_price, current_price, date, stock_value) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
             user_id,
-            stock_data.name,
+            stock_data['name'],
             symbol,
             no_of_shares,
-            stock_data.price,
-            stock_data.price,
-            get_time(),
+            stock_data['price'],
+            stock_data['price'],
+            datetime.now().strftime("%d-%m-%Y %H:%M:%S"),
             total_cost,
         )
 
@@ -98,11 +100,11 @@ def buy():
         db.execute(
             "INSERT INTO history (user_id, name, symbol, shares, action, balance, date) VALUES (?, ?, ?, ?, ?, ?, ?)",
             user_id,
-            stock_data.name,
+            stock_data['name'],
             symbol,
             no_of_shares,
             "PURCHASED",
-            get_time(),
+            datetime.now().strftime("%d-%m-%Y %H:%M:%S"),
         )
 
         flash("Purchase successful!", "success")
