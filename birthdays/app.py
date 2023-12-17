@@ -39,7 +39,7 @@ def index():
         sql ="SELECT * from birthdays"
         results = db.execute(sql)
         for result in results:
-            birthday = Birthday(result["id"], result["name"], result["month"], result["day"] )
+            birthday = Birthday( result["name"], result["month"], result["day"], result["id"] )
             birthdays.append(birthday)
         return render_template("index.html", birthdays=birthdays)
 
