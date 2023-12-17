@@ -41,8 +41,49 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-    """Buy shares of stock"""
-    return apology("TODO")
+    """If the user is trying to buy a quote"""
+    if request.method == 'POST':
+        symbol = request.form.get('symbol')
+        shares = request.form.get('shares')
+
+        # Ensure inputs are not blank
+        if not symbol or not shares:
+            flash('Stock symbol and number of shares are required', 'error')
+            return redirect(url_for('buy'))
+
+        # Ensure shares is a positive integer
+        try:
+            shares = int(shares)
+            if shares <= 0:
+                raise ValueError
+        except ValueError:
+            flash('Number of shares must be a positive integer', 'error')
+            return redirect(url_for('buy'))
+
+        # Get stock price
+        stock_price = get_stock_price(symbol)
+
+        if stock_price is None:
+            flash('Stock symbol does not exist', 'error')
+            return redirect(url_for('buy'))
+
+        # Calculate total cost
+        total_cost = stock_price * shares
+
+        # Check available cash (Assuming you have a function to get user's cash from the database)
+        user_cash = get_user_cash()  # Replace with your function
+
+        if total_cost > user_cash:
+            flash('Insufficient funds to buy these shares', 'error')
+            return redirect(url_for('buy'))
+
+        # Perform purchase (Update user's cash and record purchase in the database)
+        perform_purchase(symbol, shares, stock_price)  # Replace with your purchase logic
+
+        flash('Purchase successful!', 'success')
+        return redirect(url_for('home'))  # Redirect to the home page after purchase
+
+    return render_template('buy.html')
 
 
 @app.route("/history")
