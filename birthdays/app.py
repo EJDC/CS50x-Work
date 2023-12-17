@@ -34,8 +34,6 @@ def index():
         sql = "INSERT into birthdays (name, month, day) VALUES (%s, %s, %s)"
         values = [name, month, day]
         results=db.execute(sql, values)
-        id= results[0]['id']
-        birthday.id = id
         return redirect("/")
 
     else:
