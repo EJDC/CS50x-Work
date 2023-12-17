@@ -29,10 +29,11 @@
                     </thead>
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
-                        {% for person in birthdays %}
+                        {% for birthday in birthdays %}
                         <tr>
-                          <td>{{ person['name'] }}</td>
-                          <td>{{ person['birthday'] }}</td>
+                          <td>{{ birthday['name'] }}</td>
+                          <td>{{ birthday['month'] }}</td>
+                          <td>{{ birthday['year'] }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
