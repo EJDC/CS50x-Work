@@ -85,7 +85,7 @@ def buy():
 
         # Add transaction to portfolio database
         db.execute(
-            "INSERT INTO portfolios (user_id, name, symbol, no_of_shares, paid_price, current_price, date, stock_value) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            "INSERT INTO portfolios (user_id, name, symbol, no_of_shares, paid_price, current_price, date, total_cost) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
             user_id,
             stock_data['name'],
             symbol,
