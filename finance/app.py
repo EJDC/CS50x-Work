@@ -111,7 +111,7 @@ def quote():
             return render_template('quoted.html', symbol=symbol, price=price)
         else:
             # Handle case where stock symbol is invalid or price retrieval fails
-            return "Failed to retrieve stock information"
+            return apology("Invalid symbol!")
 
     """User got here via GET so render the page"""
     return render_template("quote.html")
@@ -127,21 +127,21 @@ def register():
 
         """Check if username or password or confirmation don't exist"""
         if not username or not unhashed_password or not confirmation:
-            flash('Did not complete all fields', 'error')
-            return apology("TODO")
+            flash('Did not complete all fields!', 'error')
+            return apology("Did not complete all fields!")
 
         """Check if password and confirmation don't match"""
         if unhashed_password != confirmation:
-            flash('Passwords do not match', 'error')
-            return apology("TODO")
+            flash('Passwords do not match!', 'error')
+            return apology("Passwords do not match!")
 
         """Check if username already exists"""
         def username_exists(username):
             result = db.execute("SELECT * FROM users WHERE username = :username", username=username)
             return len(result) > 0
         if username_exists(username):
-            flash('Username already exists cannot register. Please login.', 'error')
-            return apology("TODO")
+            flash('Username already exists cannot register!. Please login.', 'error')
+            return apology("Username already exists cannot register!")
 
         """Hash password and save to database"""
         hash = generate_password_hash(unhashed_password)
