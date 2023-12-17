@@ -111,16 +111,16 @@ def register():
     """Register user"""
     if request.method == 'POST':
         username = request.form['username']
-        password = request.form['password']
+        unhashed_password = request.form['password']
         confirmation = request.form['confirmation']
 
         """Check if username or password or confirmation don't exist"""
-        if not username or not password or not confirmation:
+        if not username or not unhashed_password or not confirmation:
             flash('Did not complete all fields', 'error')
             return apology("TODO")
 
         """Check if password and confirmation don't match"""
-        if password != confirmation:
+        if unhashed_password != confirmation:
             flash('Passwords do not match', 'error')
             return apology("TODO")
 
@@ -132,8 +132,8 @@ def register():
             flash('Username already exists cannot register. Please login.', 'error')
             return apology("TODO")
 
-        hashed_password = generate_password_hash(password)
-        db.execute("INSERT INTO users (username, hashed_password) VALUES(%s, %s)", username, hashed_password)
+        password = generate_password_hash(unhashed_password)
+        db.execute("INSERT INTO users (username, password) VALUES(%s, %s)", username, password)
         flash('Registration successful!', 'success')
         return render_template("login.html")
 
