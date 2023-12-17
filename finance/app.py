@@ -69,12 +69,12 @@ def buy():
 
         user_id = session["user_id"]
 
-        # Check available cash (Assuming you have a function to get user's cash from the database)
-        user_cash = get_user_cash()  # Replace with your function
+        user_cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+        user_cash = user_cash[0]["cash"]
 
         if total_cost > user_cash:
-            flash('Insufficient funds to buy these shares', 'error')
-            return redirect(url_for('buy'))
+            flash('Not Enough Cash!', 'error')
+            return apology('Not Enough Cash!')
 
         # Perform purchase (Update user's cash and record purchase in the database)
         perform_purchase(symbol, shares, stock_price)  # Replace with your purchase logic
