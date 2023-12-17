@@ -42,27 +42,27 @@ def index():
 @login_required
 def buy():
     """If the user is trying to buy a quote"""
-    if request.method == 'POST':
-        symbol = request.form.get('symbol')
-        shares = request.form.get('shares')
+    if request.method == "POST":
+        symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
 
         """ Ensure inputs are not blank """
         if not symbol or not shares:
-            flash('Stock symbol and number of shares are required', 'error')
-            return apology('Stock symbol and number of shares are required')
+            flash("Stock symbol and number of shares are required", "error")
+            return apology("Stock symbol and number of shares are required")
 
         """ Ensure input number of shares is a positive integer """
         if not shares.isdigit() or int(shares) <= 0:
-            flash('Number of shares must be a positive integer', 'error')
-            return apology('Number of shares must be a positive integer')
+            flash("Number of shares must be a positive integer", "error")
+            return apology("Number of shares must be a positive integer")
 
         """ Get stock price """
         stock_data = lookup(symbol)
 
         """ Ensure Stock Symbol exists """
         if stock_data is None:
-            flash('Stock symbol does not exist', 'error')
-            return apology('Stock symbol does not exist')
+            flash("Stock symbol does not exist", "error")
+            return apology("Stock symbol does not exist")
 
         """ Calculate total cost  """
         total_cost = stock_data.price * shares
@@ -73,16 +73,39 @@ def buy():
         user_cash = user_cash[0]["cash"]
 
         if total_cost > user_cash:
-            flash('Not Enough Cash!', 'error')
-            return apology('Not Enough Cash!')
+            flash("Not Enough Cash!", "error")
+            return apology("Not Enough Cash!")
 
         # Perform purchase (Update user's cash and record purchase in the database)
-        perform_purchase(symbol, shares, stock_price)  # Replace with your purchase logic
+        # Add transaction to portfolio database
+        db.execute(
+            "INSERT INTO portfolios (user_id, name, symbol, shares, paid_price, current_price, date, stock_value) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            user_id,
+            stock["name"],
+            symbol,
+            shares,
+            stock["price"],
+            stock["price"],
+            get_time(),
+            stock["price"],
+        )
 
-        flash('Purchase successful!', 'success')
-        return redirect(url_for('home'))  # Redirect to the home page after purchase
+        # Add transaction to history database
+        db.execute(
+            "INSERT INTO history (user_id, name, symbol, shares, action, balance, date) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            user_id,
+            stock["name"],
+            symbol,
+            shares,
+            "PURCHASED",
+            balance,
+            get_time(),
+        )
 
-    return render_template('buy.html')
+        flash("Purchase successful!", "success")
+        return redirect(url_for("home"))  # Redirect to the home page after purchase
+
+    return render_template("buy.html")
 
 
 @app.route("/history")
@@ -101,7 +124,6 @@ def login():
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
-
         # Ensure username was submitted
         if not request.form.get("username"):
             return apology("must provide username", 403)
@@ -111,10 +133,14 @@ def login():
             return apology("must provide password", 403)
 
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        rows = db.execute(
+            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+        )
 
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
+        if len(rows) != 1 or not check_password_hash(
+            rows[0]["hash"], request.form.get("password")
+        ):
             return apology("invalid username and/or password", 403)
 
         # Remember which user has logged in
@@ -143,12 +169,12 @@ def logout():
 @login_required
 def quote():
     """If the user is trying to get a quote"""
-    if request.method == 'POST':
-        symbol = request.form.get('symbol')
+    if request.method == "POST":
+        symbol = request.form.get("symbol")
         data = lookup(symbol)
         if data is not None:
             # If the price is retrieved successfully, render the quoted.html template
-            return render_template('quoted.html', data=data)
+            return render_template("quoted.html", data=data)
         else:
             # Handle case where stock symbol is invalid or price retrieval fails
             return apology("Invalid symbol!")
@@ -160,33 +186,37 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    if request.method == 'POST':
-        username = request.form['username']
-        unhashed_password = request.form['password']
-        confirmation = request.form['confirmation']
+    if request.method == "POST":
+        username = request.form["username"]
+        unhashed_password = request.form["password"]
+        confirmation = request.form["confirmation"]
 
         """Check if username or password or confirmation don't exist"""
         if not username or not unhashed_password or not confirmation:
-            flash('Did not complete all fields!', 'error')
+            flash("Did not complete all fields!", "error")
             return apology("Did not complete all fields!")
 
         """Check if password and confirmation don't match"""
         if unhashed_password != confirmation:
-            flash('Passwords do not match!', 'error')
+            flash("Passwords do not match!", "error")
             return apology("Passwords do not match!")
 
         """Check if username already exists"""
+
         def username_exists(username):
-            result = db.execute("SELECT * FROM users WHERE username = :username", username=username)
+            result = db.execute(
+                "SELECT * FROM users WHERE username = :username", username=username
+            )
             return len(result) > 0
+
         if username_exists(username):
-            flash('Username already exists cannot register!. Please login.', 'error')
+            flash("Username already exists cannot register!. Please login.", "error")
             return apology("Username already exists cannot register!")
 
         """Hash password and save to database"""
         hash = generate_password_hash(unhashed_password)
         db.execute("INSERT INTO users (username, hash) VALUES(%s, %s)", username, hash)
-        flash('Registration successful!', 'success')
+        flash("Registration successful!", "success")
         return render_template("login.html")
 
     else:
