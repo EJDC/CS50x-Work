@@ -28,7 +28,11 @@ def index():
     if request.method == "POST":
 
         # TODO: Add the user's entry into the database
-
+        sql = "INSERT into birthdays (name, month, day) VALUES (%s, %s, %s) RETURNING id"
+        values = [birthday.name, birthday.month, birthday.day]
+        results=db.execute(sql, values)
+        id= results[0]['id']
+        birthday.id = id
         return redirect("/")
 
     else:
