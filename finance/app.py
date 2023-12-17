@@ -113,20 +113,25 @@ def register():
         username = request.form['username']
         password = request.form['password']
         confirmation = request.form['confirmation']
+
         """Check if username or password or confirmation don't exist"""
         if not username or not password or not confirmation:
             return apology("TODO")
+
+        """Check if username already exists"""
         def username_exists(username):
             result = db.execute("SELECT * FROM users WHERE username = :username", username=username)
             return len(result) > 0
         if username_exists(username):
             flash('Username already exists', 'error')
             return apology("TODO")
+
+        """Check if password and confirmation don't match"""
         if password != confirmation:
             flash('Passwords do not match', 'error')
             return redirect(url_for('register'))
         hashed_password = generate_password_hash(password)
-        
+
     return apology("TODO")
 
 
