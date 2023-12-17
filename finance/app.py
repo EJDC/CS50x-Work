@@ -139,7 +139,7 @@ def register():
         return render_template("login.html")
 
     else:
-
+        """User got here via GET so render the page"""
         return render_template("register.html")
 
 
