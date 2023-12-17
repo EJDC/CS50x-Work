@@ -24,9 +24,7 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Birthday Month</th>
-                            <th>Birthday Day</th>
-
+                            <th>Birthday</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,8 +32,7 @@
                         {% for birthday in birthdays %}
                         <tr>
                           <td>{{ birthday.name }}</td>
-                          <td>{{ birthday.month }}</td>
-                          <td></td>
+                          <td>{{ birthday.month }}/{{ birthday.day }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
