@@ -116,6 +116,7 @@ def register():
 
         """Check if username or password or confirmation don't exist"""
         if not username or not password or not confirmation:
+            flash('Did not complete all fields', 'error')
             return apology("TODO")
 
         """Check if password and confirmation don't match"""
@@ -128,13 +129,13 @@ def register():
             result = db.execute("SELECT * FROM users WHERE username = :username", username=username)
             return len(result) > 0
         if username_exists(username):
-            flash('Username already exists', 'error')
+            flash('Username already exists cannot register. Please login.', 'error')
             return apology("TODO")
 
         hashed_password = generate_password_hash(password)
         db.execute("INSERT INTO users (username, hashed_password) VALUES(%s, %s)", username, hashed_password)
         flash('Registration successful!', 'success')
-        return redirect(url_for('login'))
+        return render_template("login.html")
 
     else:
         return render_template("register.html")
