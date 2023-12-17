@@ -114,7 +114,7 @@ def quote():
             return "Failed to retrieve stock information"
 
     """User got here via GET so render the page"""
-    return render_template("register.html")
+    return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
