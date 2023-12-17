@@ -65,7 +65,7 @@ def buy():
             return apology("Stock symbol does not exist")
 
         """ Calculate total cost  """
-        total_cost = stock_data.price * no_of_shares
+        total_cost = stock_data['price'] * no_of_shares
 
         """ Get the user's cash  """
         user_id = session["user_id"]
@@ -88,21 +88,20 @@ def buy():
             stock_data.name,
             symbol,
             no_of_shares,
-            stock["price"],
-            stock["price"],
+            stock_data.price,
+            stock_data.price,
             get_time(),
-            stock["price"],
+            total_cost,
         )
 
         # Add transaction to history database
         db.execute(
             "INSERT INTO history (user_id, name, symbol, shares, action, balance, date) VALUES (?, ?, ?, ?, ?, ?, ?)",
             user_id,
-            stock["name"],
+            stock_data.name,
             symbol,
-            shares,
+            no_of_shares,
             "PURCHASED",
-            balance,
             get_time(),
         )
 
