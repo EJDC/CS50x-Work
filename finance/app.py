@@ -125,6 +125,8 @@ def register():
         if password != confirmation:
             flash('Passwords do not match', 'error')
             return redirect(url_for('register'))
+        hashed_password = generate_password_hash(password)
+
     return apology("TODO")
 
 
