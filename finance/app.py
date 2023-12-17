@@ -103,7 +103,7 @@ def buy():
         )
 
         flash("Purchase successful!", "success")
-        return redirect(url_for("home"))  # Redirect to the home page after purchase
+        return redirect("/")
 
     return render_template("buy.html")
 
