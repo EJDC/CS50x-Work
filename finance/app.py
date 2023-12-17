@@ -135,7 +135,8 @@ def register():
         flash('Registration successful!', 'success')
         return redirect(url_for('login'))
 
-    return apology("TODO")
+    else:
+        return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
