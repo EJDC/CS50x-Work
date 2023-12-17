@@ -37,10 +37,10 @@ def index():
 
         birthdays = []
         sql ="SELECT * from birthdays"
-        results = run_sql(sql)
+        results = db.execute(sql)
         for result in results:
-            birthdays = Birthday
-
+            birthday = Birthday(result["id"], result["name"], result["month"], result["year"] )
+            birthdays.append(birthday)
         return render_template("index.html", birthdays=birthdays)
 
 
