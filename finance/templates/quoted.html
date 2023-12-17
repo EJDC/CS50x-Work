@@ -1,2 +1,6 @@
+{% extends "layout.html" %}
+
+{% block main %}
 <h2>Stock Quote for {{ symbol }}</h2>
-<p>Current Price: ${{ symbol.price }}</p>
+<p>Current Price: ${{price.price}}</p>
+{% endblock %}
