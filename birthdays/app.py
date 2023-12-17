@@ -31,7 +31,7 @@ def index():
         name = request.form['name']
         month = request.form['month']
         day = request.form['day']
-        sql = "INSERT into birthdays (name, month, day) VALUES (%s, %s, %s) RETURNING id"
+        sql = "INSERT into birthdays (name, month, day) VALUES (%s, %s, %s)"
         values = [name, month, day]
         results=db.execute(sql, values)
         id= results[0]['id']
