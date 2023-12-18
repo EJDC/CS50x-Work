@@ -324,17 +324,6 @@ def sell():
         # Update user's cash balance
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, user_id)
 
-        # # Add transaction to history database
-        # db.execute(
-        #     "INSERT INTO history (user_id, name, symbol, shares, action, date) VALUES (?, ?, ?, ?, ?, ?, ?)",
-        #     user_id,
-        #     stock["name"],
-        #     symbol,
-        #     no_of_shares,
-        #     "SOLD",
-        #     get_time(),
-        # )
-
         flash("Successfully sold shares!")
         return redirect("/")
 
