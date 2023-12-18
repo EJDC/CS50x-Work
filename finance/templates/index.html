@@ -20,8 +20,8 @@
             <tr>
                 <td>{{ stock.symbol }}</td>
                 <td>{{ stock.no_of_shares }}</td>
-                <td>{{ get_stock_price(stock.symbol) }}</td>
-                <td>{{ stock.no_of_shares * get_stock_price(stock.symbol) }}</td>
+                <td>{{ lookupe(stock.symbol) }}</td>
+                <td>{{ stock.no_of_shares * lookup(stock.symbol) }}</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -31,3 +31,4 @@
     <p>Total Portfolio Value: ${{ total_value }}</p>
 </body>
 </html>
+{% endblock %}
