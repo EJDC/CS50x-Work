@@ -269,15 +269,16 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
+
     """Sell shares of stock."""
     user_id = session["user_id"]
     portfolio = db.execute("SELECT * FROM portfolios WHERE user_id = ?", user_id)
 
-    # User reached route via POST (as by submitting a form via POST)
+    """If the user is trying to sell a stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol")
         stock = lookup(symbol)
-        shares = int(request.form.get("shares"))
+        no_of_shares = int(request.form.get("shares"))
 
         owned_stock = db.execute(
             "SELECT shares FROM portfolios WHERE user_id = ? AND symbol = ?",
@@ -285,21 +286,22 @@ def sell():
             symbol,
         )
 
-        # Check if user owns shares of the stock
+        """ Check if user owns shares of the stock"""
         if not owned_stock:
-            return apology(f"You don't own any shares of {symbol}!")
+            return apology("You don't own any shares of that company!")
 
-        # Check if user has enough shares to sell
+        """ Check if user has enough shares to sell """
         current_shares = sum([stock["shares"] for stock in owned_stock])
-        if current_shares < shares:
-            return apology("You don't have enough shares to sell!")
+        if current_shares < no_of_shares:
+            return apology("You don't have that many shares in that company to sell!")
 
-        # Retrieve user's balance
+        """ Retrieve user's balance """
         cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
         cash = cash[0]["cash"]
-        # Deposit value of sold shares
+
+        """ Price of shares to be sold """
         current_price = stock["price"]
-        cash += shares * current_price
+        cash += no_of_shares * current_price
 
         # Perform the sale
         for info in owned_stock:
@@ -318,9 +320,6 @@ def sell():
                     user_id,
                     symbol,
                 )
-
-        # Format balance
-        balance = f"${cash:,.2f} (+${(shares * current_price):,.2f})"
 
         # Update user's cash balance
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, user_id)
