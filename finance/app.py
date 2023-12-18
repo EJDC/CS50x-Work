@@ -308,8 +308,8 @@ def sell():
             # Update database if user sells less shares than the total amount he owns
             if info["no_of_shares"] > no_of_shares:
                 db.execute(
-                    "UPDATE portfolios SET shares = ? WHERE user_id = ? AND symbol = ?",
-                    info["shares"] - no_of_shares,
+                    "UPDATE portfolios SET no_of_shares = ? WHERE user_id = ? AND symbol = ?",
+                    info["no_of_shares"] - no_of_shares,
                     user_id,
                     symbol,
                 )
