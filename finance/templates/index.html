@@ -20,7 +20,7 @@
             <tr>
                 <td>{{ stock.symbol }}</td>
                 <td>{{ stock.no_of_shares }}</td>
-                <td>{{ lookupe(stock.symbol) }}</td>
+                <td>{{ lookup(stock.symbol) }}</td>
                 <td>{{ stock.no_of_shares * lookup(stock.symbol) }}</td>
             </tr>
             {% endfor %}

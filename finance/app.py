@@ -70,10 +70,10 @@ def calculate_portfolio_value(portfolio, cash):
 
     for item in portfolio:
         # Assuming you have a function to get the current price of a stock from an API
-        stock_price = lookup(item)
-        print(stock_price)
-        if stock_price is not None:
-            total_value += stock_price * int(item["no_of_shares"])
+        stock = lookup(item["symbol"])
+        print(stock)
+        if stock is not None:
+            total_value += stock["price"] * int(item["no_of_shares"])
 
     return total_value
 
