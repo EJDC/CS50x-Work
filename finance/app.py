@@ -75,7 +75,7 @@ def calculate_portfolio_value(portfolio, cash):
         if stock is not None:
             total_value += stock["price"] * int(item["no_of_shares"])
 
-    return total_value
+    return round(total_value,2)
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
