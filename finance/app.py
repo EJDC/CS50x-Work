@@ -99,7 +99,7 @@ def buy():
 
         # Add transaction to history database
         db.execute(
-            "INSERT INTO history (user_id, name, symbol, shares, action, balance, date) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            "INSERT INTO history (user_id, name, symbol, shares, action, date) VALUES (?, ?, ?, ?, ?, ?)",
             user_id,
             stock_data['name'],
             symbol,
