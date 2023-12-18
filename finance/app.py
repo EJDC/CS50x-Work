@@ -295,7 +295,7 @@ def sell():
         if current_shares < no_of_shares:
             return apology("You don't have that many shares in that company to sell!")
 
-        """ Retrieve user's balance """
+        """ Get user's cash """
         cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
         cash = cash[0]["cash"]
 
