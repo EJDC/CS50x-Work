@@ -281,7 +281,7 @@ def sell():
         no_of_shares = int(request.form.get("shares"))
 
         owned_stock = db.execute(
-            "SELECT shares FROM portfolios WHERE user_id = ? AND symbol = ?",
+            "SELECT no_of_shares FROM portfolios WHERE user_id = ? AND symbol = ?",
             user_id,
             symbol,
         )
@@ -291,7 +291,7 @@ def sell():
             return apology("You don't own any shares of that company!")
 
         """ Check if user has enough shares to sell """
-        current_shares = sum([stock["shares"] for stock in owned_stock])
+        current_shares = sum([stock["no_of_shares"] for stock in owned_stock])
         if current_shares < no_of_shares:
             return apology("You don't have that many shares in that company to sell!")
 
@@ -306,7 +306,7 @@ def sell():
         # Perform the sale
         for info in owned_stock:
             # Update database if user sells less shares than the total amount he owns
-            if info["shares"] > shares:
+            if info["no_of_shares"] > shares:
                 db.execute(
                     "UPDATE portfolios SET shares = ? WHERE user_id = ? AND symbol = ?",
                     info["shares"] - shares,
