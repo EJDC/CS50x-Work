@@ -39,7 +39,7 @@ def index():
     """Show portfolio of stocks"""
 
     """Get user's cash balance"""
-    user_cash = round(get_user_cash(session["user_id"]), 2)
+    user_cash = get_user_cash(session["user_id"])
 
     """Get user's stock holdings and relevant information"""
     user_portfolio = get_user_portfolio(session["user_id"])
