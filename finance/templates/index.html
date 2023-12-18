@@ -31,8 +31,8 @@
         </tbody>
     </table>
 
-    <p>Cash Balance: ${{ cash }}</p>
-    <p>Total Portfolio Value: ${{ total_value }}</p>
+    <p>Cash Balance: {{ cash | usd }}</p>
+    <p>Total Portfolio Value: {{ total_value | usd}}</p>
 </body>
 </html>
 {% endblock %}
