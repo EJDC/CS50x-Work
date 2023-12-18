@@ -133,17 +133,6 @@ def buy():
             round(total_cost, 2),
         )
 
-        """ Add transaction to history database """
-        db.execute(
-            "INSERT INTO history (user_id, name, symbol, no_of_shares, type, date) VALUES (?, ?, ?, ?, ?, ?)",
-            user_id,
-            stock_data["name"],
-            symbol,
-            no_of_shares,
-            "PURCHASED",
-            datetime.now().strftime("%d-%m-%Y %H:%M:%S"),
-        )
-
         flash("Purchase successful!", "success")
         return redirect("/")
 
