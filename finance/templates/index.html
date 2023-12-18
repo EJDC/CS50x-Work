@@ -9,21 +9,23 @@
     <table>
         <thead>
             <tr>
-                <th>Stock Symbol</th>
+                <th>Company Name</th>
+                <th>Symbol</th>
                 <th>Number of Shares</th>
+                <th>Buying Price</th>
                 <th>Current Price</th>
                 <th>Total Value</th>
             </tr>
         </thead>
         <tbody>
-            {% for stock in portfolio %}
+            {% for item in portfolio %}
             <tr>
-                <td>{{ stock["name"] }}</td>
-                <td>{{ stock["symbol"] }}</td>
-                <td>{{ stock["shares"] }}</td>
-                <td>{{ stock["paid_price"] | usd }}</td>
-                <td>{{ stock["current_price"] | usd }}</td>
-                <td>{{ stock["stock_value"] | usd }}</td>
+                <td>{{ item["name"] }}</td>
+                <td>{{ item["symbol"] }}</td>
+                <td>{{ item["no_of_shares"] }}</td>
+                <td>{{ item["paid_price"] | usd }}</td>
+                <td>{{ item["current_price"] | usd }}</td>
+                <td>{{ item["total_cost"] | usd }}</td>
             </tr>
             {% endfor %}
         </tbody>
