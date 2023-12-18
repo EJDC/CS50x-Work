@@ -18,10 +18,12 @@
         <tbody>
             {% for stock in portfolio %}
             <tr>
-                <td>{{ stock.symbol }}</td>
-                <td>{{ stock.no_of_shares }}</td>
-                <td>{{ lookup(stock.symbol) }}</td>
-                <td>{{ stock.no_of_shares * lookup(stock.symbol) }}</td>
+                <td>{{ stock["name"] }}</td>
+                <td>{{ stock["symbol"] }}</td>
+                <td>{{ stock["shares"] }}</td>
+                <td>{{ stock["paid_price"] | usd }}</td>
+                <td>{{ stock["current_price"] | usd }}</td>
+                <td>{{ stock["stock_value"] | usd }}</td>
             </tr>
             {% endfor %}
         </tbody>
