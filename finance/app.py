@@ -269,5 +269,77 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
-    """Sell shares of stock"""
-    return apology("TODO")
+    """Sell shares of stock."""
+    user_id = session["user_id"]
+    portfolio = db.execute("SELECT * FROM portfolios WHERE user_id = ?", user_id)
+
+    # User reached route via POST (as by submitting a form via POST)
+    if request.method == "POST":
+        symbol = request.form.get("symbol")
+        stock = lookup(symbol)
+        shares = int(request.form.get("shares"))
+
+        owned_stock = db.execute(
+            "SELECT shares FROM portfolios WHERE user_id = ? AND symbol = ?",
+            user_id,
+            symbol,
+        )
+
+        # Check if user owns shares of the stock
+        if not owned_stock:
+            return apology(f"You don't own any shares of {symbol}!")
+
+        # Check if user has enough shares to sell
+        current_shares = sum([stock["shares"] for stock in owned_stock])
+        if current_shares < shares:
+            return apology("You don't have enough shares to sell!")
+
+        # Retrieve user's balance
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+        cash = cash[0]["cash"]
+        # Deposit value of sold shares
+        current_price = stock["price"]
+        cash += shares * current_price
+
+        # Perform the sale
+        for info in owned_stock:
+            # Update database if user sells less shares than the total amount he owns
+            if info["shares"] > shares:
+                db.execute(
+                    "UPDATE portfolios SET shares = ? WHERE user_id = ? AND symbol = ?",
+                    info["shares"] - shares,
+                    user_id,
+                    symbol,
+                )
+            # Delete stock from portfolio if all shares were sold
+            else:
+                db.execute(
+                    "DELETE FROM portfolios WHERE user_id = ? AND symbol = ?",
+                    user_id,
+                    symbol,
+                )
+
+        # Format balance
+        balance = f"${cash:,.2f} (+${(shares * current_price):,.2f})"
+
+        # Update user's cash balance
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, user_id)
+
+        # Add transaction to history database
+        db.execute(
+            "INSERT INTO history (user_id, name, symbol, shares, action, balance, date) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            user_id,
+            stock["name"],
+            symbol,
+            shares,
+            "SOLD",
+            balance,
+            get_time(),
+        )
+
+        flash(f"Successfully sold {shares} shares of {symbol}!")
+        return redirect("/")
+
+    # User reached route via GET (as by clicking a link or via redirect)
+    return render_template("sell.html", portfolio=portfolio)
+
