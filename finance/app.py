@@ -55,7 +55,7 @@ def index():
 """Function to get user's cash balance from the database"""
 def get_user_cash(user_id):
     cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
-    return cash[0]["cash"] if cash else 0
+    return round(cash[0]["cash"],2) if cash else 0
 
 
 """Function to get user's stock portfolio from the database"""
