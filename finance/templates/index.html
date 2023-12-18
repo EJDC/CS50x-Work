@@ -1,0 +1,35 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio Summary</title>
+    <!-- Add any necessary styling or CSS links -->
+</head>
+<body>
+    <h1>Portfolio Summary</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Stock Symbol</th>
+                <th>Number of Shares</th>
+                <th>Current Price</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in portfolio %}
+            <tr>
+                <td>{{ stock.symbol }}</td>
+                <td>{{ stock.no_of_shares }}</td>
+                <td>{{ get_stock_price(stock.symbol) }}</td>
+                <td>{{ stock.no_of_shares * get_stock_price(stock.symbol) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p>Cash Balance: ${{ cash }}</p>
+    <p>Total Portfolio Value: ${{ total_value }}</p>
+</body>
+</html>
