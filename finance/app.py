@@ -67,7 +67,7 @@ def buy():
             return apology("Stock symbol does not exist")
 
         """ Calculate total cost  """
-        total_cost = stock_data['price'] * int(no_of_shares)
+        total_cost = round(stock_data['price'],2) * int(no_of_shares)
 
         """ Get the user's cash  """
         user_id = session["user_id"]
@@ -79,11 +79,11 @@ def buy():
             flash("Not Enough Cash!", "error")
             return apology("Not Enough Cash!")
 
-        # Perform purchase (Update user's cash and record purchase in the database)
+        """ Perform purchase (Update user's cash and record purchase in the database) """
         updated_user_cash = user_cash - total_cost
         db.execute("UPDATE users SET cash = ? WHERE id = ?", updated_user_cash, user_id)
 
-        # Add transaction to portfolio database
+        """ Add transaction to portfolio database """
         db.execute(
             "INSERT INTO portfolios (user_id, name, symbol, no_of_shares, paid_price, current_price, date, total_cost) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
             user_id,
@@ -97,7 +97,7 @@ def buy():
 
         )
 
-        # Add transaction to history database
+        """ Add transaction to history database """
         db.execute(
             "INSERT INTO history (user_id, name, symbol, no_of_shares, type, date) VALUES (?, ?, ?, ?, ?, ?)",
             user_id,
