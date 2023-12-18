@@ -216,6 +216,7 @@ def quote():
         data = lookup(symbol)
         if data is not None:
             # If the price is retrieved successfully, render the quoted.html template
+            data["price"] = usd(data["price"])
             return render_template("quoted.html", data=data)
         else:
             # Handle case where stock symbol is invalid or price retrieval fails
