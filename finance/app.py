@@ -292,17 +292,17 @@ def sell():
         current_price = stock["price"]
         cash += no_of_shares * current_price
 
-        # Perform the sale
-        for info in owned_stock:
-            # Update database if user sells less shares than the total amount he owns
-            if info["no_of_shares"] > no_of_shares:
+        """ Perform the sale"""
+        for data in owned_stock:
+            """ Update database if user sells less shares than the total amount they have """
+            if data["no_of_shares"] > no_of_shares:
                 db.execute(
                     "UPDATE portfolios SET no_of_shares = ? WHERE user_id = ? AND symbol = ?",
                     info["no_of_shares"] - no_of_shares,
                     user_id,
                     symbol,
                 )
-            # Delete stock from portfolio if all shares were sold
+            """Delete from portfolio if all shares were sold"""
             else:
                 db.execute(
                     "DELETE FROM portfolios WHERE user_id = ? AND symbol = ?",
@@ -310,12 +310,10 @@ def sell():
                     symbol,
                 )
 
-        # Update user's cash balance
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash, user_id)
-
         flash("Successfully sold shares!")
         return redirect("/")
 
-    # User reached route via GET (as by clicking a link or via redirect)
+    """ User reached route via GET """
     return render_template("sell.html", portfolio=portfolio)
 
