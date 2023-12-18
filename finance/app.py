@@ -37,8 +37,44 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return apology("TODO")
 
+    """Get user's cash balance"""
+    user_cash = get_user_cash(session["user_id"])
+
+    """Get user's stock holdings and relevant information"""
+    user_portfolio = get_user_portfolio(session["user_id"])
+
+    """Calculate total value of each holding and the grand total"""
+    total_value = calculate_portfolio_value(user_portfolio, user_cash)
+
+    return render_template(
+        "index.html", portfolio=user_portfolio, cash=user_cash, total_value=total_value
+    )
+
+
+"""Function to get user's cash balance from the database"""
+def get_user_cash(user_id):
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+    return cash[0]["cash"] if cash else 0
+
+
+"""Function to get user's stock portfolio from the database"""
+def get_user_portfolio(user_id):
+    user_portfolio = db.execute("SELECT * FROM portfolios WHERE user_id = ?", user_id)
+    return user_portfolio
+
+
+""" Function to calculate the total value of the user's portfolio """
+def calculate_portfolio_value(portfolio, cash):
+    total_value = cash  # Start with the cash balance
+
+    for item in portfolio:
+        # Assuming you have a function to get the current price of a stock from an API
+        stock_price = lookup(item["symbol"])
+        if stock_price is not None:
+            total_value += stock_price * item["no_of_shares"]
+
+    return total_value
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
@@ -67,7 +103,7 @@ def buy():
             return apology("Stock symbol does not exist")
 
         """ Calculate total cost  """
-        total_cost = round(stock_data['price'],2) * int(no_of_shares)
+        total_cost = round(stock_data["price"], 2) * int(no_of_shares)
 
         """ Get the user's cash  """
         user_id = session["user_id"]
@@ -87,21 +123,20 @@ def buy():
         db.execute(
             "INSERT INTO portfolios (user_id, name, symbol, no_of_shares, paid_price, current_price, date, total_cost) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
             user_id,
-            stock_data['name'],
+            stock_data["name"],
             symbol,
             no_of_shares,
-            round(stock_data['price'],2),
-            round(stock_data['price'],2),
+            round(stock_data["price"], 2),
+            round(stock_data["price"], 2),
             datetime.now().strftime("%d-%m-%Y %H:%M:%S"),
-            round(total_cost,2)
-
+            round(total_cost, 2),
         )
 
         """ Add transaction to history database """
         db.execute(
             "INSERT INTO history (user_id, name, symbol, no_of_shares, type, date) VALUES (?, ?, ?, ?, ?, ?)",
             user_id,
-            stock_data['name'],
+            stock_data["name"],
             symbol,
             no_of_shares,
             "PURCHASED",
