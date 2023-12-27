@@ -3,7 +3,8 @@
 
 An experimental frontend for an item shop using the DND 5E API - https://www.dnd5eapi.co/
 
-## Video
+## Video Demo
+https://youtu.be/eKZSTHTWbZc
 
 
 ## Demo
